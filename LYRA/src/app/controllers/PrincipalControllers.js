@@ -7,7 +7,7 @@ Controllers.IndexGet= async(req,res,next)=>{
   req.session.destroy();
   try{
     const FAQS = await querys.BuscarFAQSTodas(); 
-    res.render('Index',{FAQS});
+    res.render('index',{FAQS});
   }catch(error){
     console.log(error);
   }

@@ -142,11 +142,13 @@
 
         const formData = new FormData();
         formData.append("file", audioBlob, "audio.wav");
-
+        const datos={
+                    file:audioBlob
+                  }
         const url = 'https://fastapi-production-0f32.up.railway.app/';
         fetch(url, {
           method: 'POST',
-          body: formData,
+          body: JSON.stringify(datos),
           headers: {
     'Content-Type': 'multipart/form-data' // Agrega el encabezado
   }

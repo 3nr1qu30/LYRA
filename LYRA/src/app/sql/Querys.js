@@ -1,13 +1,21 @@
 const mysql = require('mysql2');
 const encrypt = require('../helpers/EncriptarContraseñas');
 const moment = require('moment-timezone');
+const {
+  DB_HOST,
+  DB_NAME,
+  DB_PASSWORD,
+  DB_PORT,
+  DB_USER
+} = require('./servidor.js');
 
 const con = mysql.createConnection({
-  host: "localhost",
-  port: "3306",
-  user: "root",
-  password: "n0m3l0", 
-  database: "LYRA"
+  host:DB_HOST,
+  port:DB_PORT,
+  user:DB_USER,
+  password:DB_PASSWORD, 
+  database:DB_NAME,
+  charset: "utf8"
 });
 
 con.connect((err) => {

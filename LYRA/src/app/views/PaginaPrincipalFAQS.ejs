@@ -1,0 +1,400 @@
+<%if(typeof Usuario !== 'undefined'){%>
+  <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 8|| typeof TipoUsu !== 'undefined' && TipoUsu === 3){%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de FAQ´S</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/pacientesLyra.css">
+    <link rel="stylesheet" href="/css/PPP.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+</head>
+<body>
+    <body>
+        <!--La barra-->
+            <%if(TipoUsu === 8){%>
+              <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="logo.png" alt="">
+                        </span>
+                        <div class="text logo-text">
+                            <span class="name">Lyra</span>
+                            <span class="profession">Soporte</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-menu toggle iconblack'></i>
+                </header>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <li class="search-box">
+                            <a href="#">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Principal</span>
+                            </a>
+                        </li>
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="/Soporte/EditarPerfil">
+                                    <i class='bx bx-pen icon' ></i>
+                                    <span class="text nav-text">
+                                        Modificar <br> <h6>Perfil</h6>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="/" class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Barra oscura</span>
+        
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+            <%}else if(TipoUsu === 3){%>
+                <nav class="sidebar close">
+                    <header>
+                        <div class="image-text">
+                            <span class="image">
+                                <img src="logo.png" alt="">
+                            </span>
+                            <div class="text logo-text">
+                                <span class="name">Lyra</span>
+                                <span class="profession">Soporte</span>
+                            </div>
+                        </div>
+                        <i class='bx bx-menu toggle iconblack'></i>
+                    </header>
+                    <div class="menu-bar">
+                        <div class="menu">
+                            <li class="search-box">
+                                <a href="/Soporte/GerenteSoporte">
+                                    <i class='bx bx-home-alt icon' ></i>
+                                    <span class="text nav-text">Lyra</span>
+                                </a>
+                            </li>
+                            <ul class="menu-links">
+                                <li class="nav-link">
+                                    <a href="/Soporte/Asistente">
+                                        <i class='bx bx-pen icon' ></i>
+                                        <span class="text nav-text">
+                                            Asistente <br> <h6>Soporte</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/EditorFAQ">
+                                        <i class='bx bx-message-dots icon' ></i>
+                                        <span class="text nav-text">
+                                            Editor <br> <h6>FAQ</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/GerenteMantenimiento">
+                                        <i class='bx bx-brush icon'></i>
+                                        <span class="text nav-text mini">
+                                            Gerente <br> <h6>Mantenimiento</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/IngenieroSoporte">
+                                        <i class='bx bx-adjust icon' ></i>
+                                        <span class="text nav-text mini">
+                                            Ingeniero <br> <h6>Soporte</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/IngenieroMantenimiento">
+                                        <i class='bx bx-heart icon' ></i>
+                                        <span class="text nav-text mini">
+                                            Ingeniero <br> <h6>Mantenimiento</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/GerenteSoporte">
+                                        <i class='bx bx-diamond icon' ></i>
+                                        <span class="text nav-text mini">
+                                            Gerente <br> <h6>Soporte</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/Soporte/AgregarEmpleados">
+                                        <i class='bx bx-plus-circle icon' ></i>
+                                        <span class="text nav-text mini">
+                                            Agregar <br> <h6>Usuarios</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="">
+                                        <i class='bx bx-pencil icon' ></i>
+                                        <span class="text nav-text mini">
+                                            Editar <br> <h6>Datos personales</h6>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bottom-content">
+                            <li class="">
+                                <a href="/">
+                                    <i class='bx bx-log-out icon' ></i>
+                                    <span class="text nav-text">Cerrar sesión</span>
+                                </a>
+                            </li>
+                            <li class="mode">
+                                <div class="sun-moon">
+                                    <i class='bx bx-moon icon moon'></i>
+                                    <i class='bx bx-sun icon sun'></i>
+                                </div>
+                                <span class="mode-text text">Barra oscura</span>
+            
+                                <div class="toggle-switch">
+                                    <span class="switch"></span>
+                                </div>
+                            </li>
+                        </div>
+                    </div>
+                </nav>
+            <%}%>
+        <!--La barra-->
+        <div class="containerP">
+            <h2>Bienvenido: <%=datosUsuario[0].nombre%> <%=datosUsuario[0].apellido%></h2>
+            <%if(TipoUsu === 7){%>
+            <h6>Puesto de asistente</h6>
+            <%}else if(TipoUsu === 3){%>
+              <h6>Puesto de editor de FAQ'S</h6>
+            <%}%>
+            <a href="#1" class="botonAcc color1">
+                <i class='bx bx-plus movers'></i>Crear FAQ's    
+            </a>
+            <a href="#2" class="botonAcc color2">
+                <i class='bx bx-cube-alt movers'></i>Reportes cerrados
+            </a>
+            <a href="#3" class="botonAcc color2">
+                <i class='bx bx-paper-plane movers'></i>FAQ's generadas
+            </a>
+            <%if(typeof PacyDoc !== undefined && PacyDoc.length >0 && typeof GerenteSop !== undefined && GerenteSop.length >0){%>
+            <form action="/Soporte/EditorFAQ/AgregarFAQ" method="post" id="form1">
+                <div class="form">
+                    <h4 class="titulo2">Agregar FAQ</h4>
+                    <h6 class="tituloform">Pregunta</h6>
+                    <input type="text" class="input" name="Pregunta" placeholder="Escribe la pregunta de la FAQ">
+                    <h6 class="tituloform">Solución</h6>
+                    <input type="text" class="input" name="Respuesta" placeholder="Escribe la solución de la FAQ">
+                    <button type="submit" class="submit">
+                        <i class='bx bx-plus'></i>Agregar
+                    </button>
+                </div>
+            </form>
+            <%}%>
+            <div class="contenedorreporte" id="2">
+                <h4 class="titulo">
+                    <i class='bx bx-cube-alt mov bro'></i>Reportes con estatus cerrado
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Gerente <h6>soporte</h6> </th>
+                            <th>Estatus <h6>cerrado</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de envío</h6></th>
+                            <th>Crear <h6>FAQ</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <%if(typeof Reportes !== 'undefined' && Reportes.length>0){%>
+                        <%for(let i = 0; i<Reportes.length;i++){%>
+                        <tr>
+                            <form action="/Soporte/EditorFAQ/AgregarFAQC" method="post">
+                                <td data-label="Folio">
+                                    <b><%=Reportes[i].id_reporte%></b>
+                                </td>
+                                <td data-label="Usuario">
+                                <%=Reportes[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Gerente">
+                                <%=Reportes[i].id_usuario_asignado%>
+                                </td>
+                                <td data-label="Estatus">
+                                    <div class="estatus"><%=Reportes[i].descripcion_estatus%></div>
+                                </td>
+                                <td data-label="Pregunta">
+                                    <div class="descrip">¿<%=Reportes[i].descripcion_reporte%>?</div>
+                                    <input type="hidden" name="Pregunta2" value="¿<%=Reportes[i].descripcion_reporte%>?">
+                                </td>
+                                <td data-label="Solución">
+                                    <div class="descrip"><%=Reportes[i].solucion_reporte%></div>
+                                    <input type="hidden"  name="Respuesta2" value="<%=Reportes[i].solucion_reporte%>">
+                                </td>
+                                <td data-label="Fecha">
+                                    <div class="descrip"><%=formatearFechaHora(Reportes[i].fecha_hora)%></div>
+                                </td>
+                                <td data-label="Acciones" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-plus-circle mov'></i></button>
+                                </td>    
+                            </form>
+                        </tr>
+                        <%}%>
+                      <%}%>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="contenedorreporte" id="3">
+                <h4 class="titulo">
+                    <i class='bx bx-paper-plane mov bro'></i>FAQ's generadas
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th class="colg">Pregunta <h6>ver o editar</h6></th>
+                            <th class="colg">Respuesta <h6>ver o editar</h6></th>
+                            <th>Acciones <h6>Modificar y eliminar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%if(typeof FAQS !== 'undefined' && FAQS.length>0){%>
+                        <%for(let i = 0; i<FAQS.length;i++){%>
+                        <tr>
+                            <form action="/Soporte/EditorFAQ/EditarFAQ" method="post">
+                                <td data-label="Folio">
+                                    <b><%=FAQS[i].id_FAQs%></b>
+                                    <input type="hidden" name="id_FAQs" value="<%=FAQS[i].id_FAQs%>" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Pregunta">
+                                    <textarea class="descrip estatusForm edittex agrandable" name="pregunta"><%=FAQS[i].pregunta%></textarea>
+                                </td>
+                                <td data-label="Respuesta">
+                                    <textarea class="descrip estatusForm edittex agrandable" name="respuesta"><%=FAQS[i].respuesta%></textarea>
+                                </td>
+                                <td data-label="Acciones" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-pencil mov'></i></button>
+                            </form>
+                            <form action="/Soporte/EditorFAQ/EliminarFAQ" method="post">
+                                    <input type="hidden" name="id_FAQs" value="<%=FAQS[i].id_FAQs%>">
+                                    <button type="submit" class="accion"><i class='bx bx-x-circle mov'></i></button>
+                                </td>
+                            </form>
+                        </tr>
+                        <%}%>
+                    <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <script src="/js/PPP.js"></script>
+    <script src="/js/FAQSvali.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <%if(typeof alerta !== 'undefined'){%>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <%if(alerta === 'FAQAgregada'){%>
+        <script>
+          FAQAgregada()
+        </script>
+      <%}else if(alerta === 'Error'){%>
+        <script>
+          ErrorServidor()
+        </script>
+      <%}%>
+    <%}%>
+
+
+    <%if(typeof alerta !== 'undefined'){%>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <%if(alerta === 'FAQEliminada'){%>
+        <script>
+          FAQEliminada()
+        </script>
+      <%}else if(alerta === 'Error'){%>
+        <script>
+          ErrorServidor()
+        </script>
+      <%}%>
+    <%}%>
+
+    <%if(typeof alerta !== 'undefined'){%>
+        <script src="/js/Alertas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <%if(alerta === 'FAQEditada'){%>
+          <script>
+            FAQEditada()
+          </script>
+        <%}else if(alerta === 'Error'){%>
+          <script>
+            ErrorServidor()
+          </script>
+        <%}%>
+      <%}%>
+
+    </body>
+</body>
+</html>
+ <%}else{%>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Error - No tienes permisos</title>
+    </head>
+    <body>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        NoPermisos()
+      </script>
+    </body>
+    </html>
+  <%}%>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+<script src="/js/Alertas.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  SesionCaducada()
+</script>
+</body>
+</html>
+<%}%>

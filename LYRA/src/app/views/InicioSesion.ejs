@@ -1,0 +1,96 @@
+<!-- Marco -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión</title>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="/css/LoginLyra.css">
+    <link rel="stylesheet" href="/css/dashboardDoctor.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/indexStyle2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="/js/scriptIndex.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav class="nav">
+    <div class="navbar">
+      <div class="logo"><a href="/">Lyra.</a></div>
+      <ul class="menu">
+        <li><a href="/">Inicio</a></li>
+        <li class="bomba"><a class="blanquis" href="/RegistroPacientes">Registro de Pacientes</a></li>
+        <li class="bomba"><a class="blanquis" href="/RegistroPsicologos">Registro de Psicólogos</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+<section class="home" id="home">
+    <div class="home-content login-container" >
+        <div class="login-box" >
+            <div class="Circlelogo"></div>
+            <h2 class="TextInfo">Inicio de sesión</h2>
+            <h3 class="DescriptionInfo">Inicia sesión en <a class="Redirect">LYRA</a></h3>
+            <form action="" method="post" id="formulario">
+                <div class="input-container magTop" id="grupo_nomUsu">
+                    <input type="text" name="Usuario"  class="inputTypes">
+                    <label class="MyPlaceholder">Escribe tu nombre de usuario...</label>
+                    <p class="form_input_error"><br>El nombre de usuario deberá contener minimo de 4 a 40 caracteres como máximo y solo puede usar el caracter especial "_"</p>
+                </div>
+                <div class="input-container" id="grupo_pass">
+                    <input type="password" name="Pass" class="inputTypes">
+                    <label class="MyPlaceholder">Contraseña</label>
+                    <p class="form_input_error"><br>La contraseña debe cumplir con 1 mayúscula, 1 número, 1 caracter especial, 8 carácteres totales</p>
+                </div>
+                <button type="submit" class="SubmitBtn">Inicia sesión</button>
+            </form>
+        </div>
+    </div>
+    <br>
+</section>
+
+<script src="/js/inicioSesion.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<% if (typeof alerta !== 'undefined') { %>
+  <script src="/js/Alertas.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <%if(alerta === 'Usuario o contraseña incorrectos'){%>
+      <script>
+          UsuarioOConInco();
+      </script>
+  <%}else if(alerta ==='Error Servidor'){%>
+      <script>
+          ErrorServidor();
+      </script>
+  <%}%>
+<%}%>
+
+<script src="/js/scriptIndex2.js"></script>
+
+</body>
+</html>

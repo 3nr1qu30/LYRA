@@ -1,0 +1,155 @@
+<%if(typeof Usuario !== 'undefined'){%>
+  <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 1){%>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Pacientes</title>
+          <link
+          rel="shortcut icon"
+          href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+          type="image/svg"
+          />
+          <link rel="stylesheet" href="/css/dashboardDoctor.css">
+          <link rel="stylesheet" href="/css/pacientesLyra.css">
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      </head>
+      <body>
+          <div class="contenedor">
+
+              <a  href="/Psicologo/EditarPerfil" class="floating-button">
+                  <i class="fa fa-pencil "></i>
+                  <span class="button-text">Editar información personal</span>
+              </a>
+              <a  href="/" class=" floating-button2">
+                  <i class="fa fa-close "></i>
+                  <span class="button-text">Salir</span>
+              </a>
+              
+              <div class="Doctor">
+                <b class="azulillo">Bienvenid@ </b><%=datosUsuario[0].nombre%> <%=datosUsuario[0].apellido%>
+              </div>
+              <div class="Info">
+                  Lista de pacientes
+              </div>
+              <h4 class="Info2">Observa a tus pacientes de manera remota</h4>
+              <div class="contenepacientes dops">
+                  <i class="fa fa-asterisk icolin" aria-hidden="true"></i>  Lista de pacientes
+              </div>
+              <%if(Pacientes.length!==0&&typeof Pacientes!=='undefined'){%>
+                <%for(let i=0;i<Pacientes.length;i++){%>
+                  <div class="contenepacientes">
+                      <div class="paciente-container">
+                          <div class="paciente">
+                          <h3 class="nombre"><%=i+1%>) <%=Pacientes[i].nombre%> <%=Pacientes[i].apellido%></h3>
+                          <h4 class="usuario">Usuario: <%=Pacientes[i].nombre_usuario%></h4>
+                          <h4 class="usuario borded">Edad: <%=Pacientes[i].edad%> años</h4>
+                          <h4 class="usuario borded2"><%=Pacientes[i].veces_en_tabla%> Conversaciones</h4>
+                          <form action="/Psicologo/Resumenes" method="post" style="display: inline-block;"> 
+                            <input type="hidden" value="<%=Pacientes[i].nombre_usuario%>" name="Paciente">
+                            <button type="submit" class="numeracion"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                          </form>
+                          </div>
+                      </div>
+                  </div>
+                <%}%>
+              <%}%>
+                
+
+                <div class="boton-circular" id="agregaNuevo">Agregar paciente <button class="agregarpac"> <i class="fa fa-plus rotate"></i></button></div>
+
+                <div id="myModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form method="post" action="/Psicologo/Enlace" style="display: inline-block; width: 100%;">
+                      <p>Agregar paciente</p>
+                      <input type="text" class="agpacien" name="Paciente" placeholder="Escribe el usuario del paciente">
+                      <button class="agpacienB morados"><i class="fa fa-plus "></i></button>
+                    </form>
+                  </div>
+                </div>
+
+          </div>
+      </body>
+      <script>
+
+      // Obtener el botón y la ventana modal
+      var btn = document.getElementById("agregaNuevo");
+      var modal = document.getElementById("myModal");
+
+      // Obtener el elemento <span> que cierra la ventana modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // Abrir la ventana modal cuando se hace clic en el botón
+      btn.onclick = function() {
+        modal.style.display = "flex";
+      }
+
+      // Cerrar la ventana modal cuando se hace clic en <span> (x)
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // Cerrar la ventana modal cuando se hace clic en cualquier parte fuera de la ventana modal
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      } 
+      </script>
+    <%if(typeof alerta !== 'undefined'){%>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <%if(alerta === 'Enlazado'){%>
+        <script>
+          EnlaceCom()
+        </script>
+      <%}else if(alerta === 'Enlazado Anterior'){%>
+        <script>
+          EnlaceAnterior()
+        </script>
+      <%}else if(alerta ==='No existe'){%>
+        <script>
+          PacienNoRegis()
+        </script>
+      <%}else if(alerta==='Error'){%>
+        <script>
+          ErrorServidor()
+        </script>
+      <%}%>
+    <%}%>
+      </html>
+  <%}else{%>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Error - No tienes permisos</title>
+    </head>
+    <body>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        NoPermisos()
+      </script>
+    </body>
+    </html>
+  <%}%>
+<%}else{%>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+  <script src="/js/Alertas.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    SesionCaducada()
+  </script>
+</body>
+</html>
+<%}%>

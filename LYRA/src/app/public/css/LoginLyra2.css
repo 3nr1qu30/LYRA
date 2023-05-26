@@ -1,0 +1,180 @@
+/* Reset de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos de la página */
+  
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
+  
+  .Circlelogo{
+    background-color: #cccccc28;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 100%;
+  }
+  
+  .magTop{
+    margin-top: 10px;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 2.4rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(10px);
+    opacity: 0.95;
+  }
+  
+  .TextInfo {
+    text-align: center;
+    margin-bottom: .4rem;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .DescriptionInfoBottom{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 200;
+  }
+  
+  .DescriptionInfo{
+    text-align: center;
+    margin-bottom: 1.3rem;
+    font-size: 19px;
+    font-weight:lighter;
+  
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .inputTypes {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding-left: 10px;
+  }
+  
+  .inputTypes:focus {
+    outline: none;
+    border-bottom: 3px solid #9440f4;
+  }
+  
+  .MyPlaceholder {
+    position: absolute;
+    top: 1rem;
+    left: 10px;
+    font-size: 1.2rem;
+    color: #00000093;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .inputTypes:focus ~ .MyPlaceholder, .inputTypes:valid ~ .MyPlaceholder {
+    top: -1.5rem;
+    font-size: 1rem;
+    left: 0px;
+    color: #000000;
+  }
+  
+  .SubmitBtn {
+    background-color: #9440f4;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .SubmitBtn:hover{
+    background-color: #c4b0ec;
+    }
+  
+  
+  @media only screen and (max-width: 600px) {
+    .login-box {
+        padding: 2rem;
+    }
+  
+    input, button {
+        font-size: 1rem;
+    }
+  }
+  
+  
+  .Redirect{
+    color: #958dffe3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  
+  .home-content{
+    transform: translateY(60px);
+  }
+  
+  
+    /* Estilos para la scrollbar */
+  ::-webkit-scrollbar {
+      width: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background-color: #ffffff;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #D4BFFF;
+      border-radius: 6px;
+      border: 3px solid #f1f1f1;
+      transition: all ease .2s;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #8c4eff;
+      
+    }
+  

@@ -1,0 +1,149 @@
+<!-- Marco -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="/css/RegistroDoctoresLy.css">
+    <link rel="stylesheet" href="/css/dashboardDoctor.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/indexStyle2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="/js/scriptIndex.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav class="nav">
+    <div class="navbar">
+      <div class="logo"><a href="/">Lyra.</a></div>
+      <ul class="menu">
+        <li><a href="/">Inicio</a></li>
+        <li class="bomba"><a class="blanquis" href="/InicioSesion">Inicio de sesión</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+       </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+
+<section class="home" id="home">
+    <div class="login-container">
+     
+        <div class="login-box">
+
+            <div class="row">
+                <div class="column col1">
+            <h2 class="TextInfo">Regístrate como psicólogo en Lyra.</h2>
+            <h5 class="miniInfo">Crea una cuenta ahora mismo</h5>
+            
+            <form method="post" action="/RegistroPsicologos" id="formularioRegistroPsicologo">
+                <div class="input-container magTop" id="grupo_nombre">
+                    <h4 class="infoLabel">Nombre</h4>
+                    <input type="text" name="Nombre" placeholder="Escribe tu nombre" class="inputTypes">
+                    <p class="form_input_error"><br>El o los nombres deben contener minimo dos letras</p>
+                </div>
+                <div class="input-container magTop magboTom" id="grupo_apellidos">
+                    <h4 class="infoLabel">Apellidos</h4>
+                    <input type="text" name="Apellidos" placeholder="Escribe tus apellidos" class="inputTypes">
+                    <p class="form_input_error"><br>Los apellidos deberán tener como mínimo dos letras</p>
+                </div>
+                <div class="conteneEdadSexo">
+                    <div class="input-container magTop mitades" id="grupo_edad">
+                        <h4 class="infoLabel">Edad</h4>
+                        <input type="number" name="Edad" placeholder="0 - 100" class="inputTypes">
+                        <p class="form_input_error"><br>Introduzca una edad válida</p>
+                    </div>
+                    <div class="input-container magTop mitades marginLeft" id="grupo_genero">
+                        <h4 class="infoLabel">Sexo</h4>
+                        <select class="inputTypes2 selectB" name="Sexo">
+                            <option value="">Selecciona</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                        <p class="form_input_error"><br>Seleccione su sexo</p>
+                    </div>
+                </div>
+                <div class="input-container magTop" id="grupo_nomUsuario">
+                    <h4 class="infoLabel">Nombre de usuario</h4>
+                    <input type="text" name="Usuario" placeholder="Escribe tu usuario personalizado..." class="inputTypes">
+                    <p class="form_input_error"><br>El nombre de usuario deberá contener minimo de 4 a 40 caracteres como máximo y solo puede usar el caracter especial "_"</p>
+                </div>
+                <div class="input-container magTop" id="grupo_email">
+                    <h4 class="infoLabel">Correo electrónico</h4>
+                    <input type="email" name="Correo" placeholder="Ejemplo@mail.com" class="inputTypes">
+                    <p class="form_input_error"><br>Introduzca un correo válido</p>
+                </div>
+                <div class="input-container magTop" id="grupo_password">
+                    <h4 class="infoLabel">Contraseña</h4>
+                    <input type="password" name="Pass" placeholder="Escribe tu contraseña" class="inputTypes">
+                    <p class="form_input_error"><br>La contraseña debe cumplir con 1 mayúscula, 1 número, 1 caracter especial, 8 carácteres totales</p>
+                </div>    
+                <button type="submit" class="SubmitBtn">Registrate </button>
+                <h3 class="DescriptionInfoBottom">¿Ya tienes una cuenta? <a href="/InicioSesion" class="Redirect">inicia sesión</a> </h3>
+            </form>
+                 
+                </div>
+                <div class="column col2">
+                    <div class="coles">
+                        <div class="Circlelogo"></div>
+                        <div class="LogoName">Lyra</div>
+                        <div class="LogoName2">Regístra una cuenta para poder acceder al chat</div>
+                        <div class="cuadrodatos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam aliquam obcaecati suscipit expedita voluptatibus iure vitae quo necessitatibus, earum fugiat!</div>
+                    </div>
+                </div>
+              </div>   
+        </div>
+    </div>
+
+    <script src="/js/RegistroPsicologos.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <% if (typeof alerta !== 'undefined') { %>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <%if(alerta === 'Usuario ya registrado'){%>
+          <script>
+              UsuarioRegistradoAnteriormente();
+          </script>
+      <%}else if(alerta === 'Usuario registrado'){%>
+          <script>
+              UsuarioRegistrado();
+          </script>
+      <%}else if(alerta ==='Error Servidor'){%>
+          <script>
+              ErrorServidor();
+          </script>
+      <%}%>
+    <%}%>
+
+</body>
+</section>
+
+
+
+
+    
+</html>

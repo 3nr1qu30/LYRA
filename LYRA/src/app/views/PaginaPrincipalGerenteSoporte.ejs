@@ -1,0 +1,382 @@
+<%if(typeof Usuario !== 'undefined'){%>
+    <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 3){%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <script>
+        const GerentesMantenimiento = <%- JSON.stringify(GerentesMantenimiento) %>;
+        const IngenirosSoporte = <%- JSON.stringify(IngenirosSoporte) %>;
+        const GerenteSop = <%- JSON.stringify(GerenteSop) %>;
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/pacientesLyra.css">
+    <link rel="stylesheet" href="/css/PPP.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+</head>
+<body>
+    
+ <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="logo.png" alt="">
+                        </span>
+                        <div class="text logo-text">
+                            <span class="name">Lyra</span>
+                            <span class="profession">Soporte</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-menu toggle iconblack'></i>
+                </header>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <li class="search-box">
+                            <a href="/Soporte/GerenteSoporte">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Lyra</span>
+                            </a>
+                        </li>
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="/Soporte/Asistente">
+                                    <i class='bx bx-pen icon' ></i>
+                                    <span class="text nav-text">
+                                        Asistente <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/EditorFAQ">
+                                    <i class='bx bx-message-dots icon' ></i>
+                                    <span class="text nav-text">
+                                        Editor <br> <h6>FAQ</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/GerenteMantenimiento">
+                                    <i class='bx bx-brush icon'></i>
+                                    <span class="text nav-text mini">
+                                        Gerente <br> <h6>Mantenimiento</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/IngenieroSoporte">
+                                    <i class='bx bx-adjust icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Ingeniero <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/IngenieroMantenimiento">
+                                    <i class='bx bx-heart icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Ingeniero <br> <h6>Mantenimiento</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/GerenteSoporte">
+                                    <i class='bx bx-diamond icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Gerente <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/AgregarEmpleados">
+                                    <i class='bx bx-plus-circle icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Agregar <br> <h6>Usuarios</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/EditarPerfil">
+                                    <i class='bx bx-pencil icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Editar <br> <h6>Datos personales</h6>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="/">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Barra oscura</span>
+        
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        <div class="containerP">
+            <h2>Bienvenido: <%=datosUsuario[0].nombre%> <%=datosUsuario[0].apellido%></h2>
+            <h6>Gerente de soporte</h6>
+            
+            <a href="#seccion1" class="botonAcc color1">
+                <i class='bx bx-bell movers'></i> Reportes
+            </a>
+            <a href="#seccion2" class="botonAcc color1">
+                <i class='bx bxl-slack-old movers'></i> Reportes del Gerente de Mantenimiento
+            </a>
+            <a href="#seccion3" class="botonAcc color1">
+                <i class='bx bx-album movers'></i> Reportes totales
+            </a>
+            <%if(typeof ReportesAbiertos !== 'undefined' && ReportesAbiertos.length>0){%>
+            <div class="contenedorreporte" id="seccion1">
+                <h4 class="titulo">
+                    <i class='bx bx-bell mov bro'></i>Reportes generados por el asistente de soporte
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Gerente <h6>soporte</h6> </th>
+                            <th>Gerente <h6>Soporte o ing de mantenimiento</h6></th>
+                            <th>Estatus <h6>aceptado</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th>Fecha <h6>de envío</h6></th>
+                            <th>Acciones <h6>asignar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<ReportesAbiertos.length;i++){%>
+                        <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteSoporte" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b><%=ReportesAbiertos[i].id_reporte%></b>
+                                    <input type="hidden" name="Id_reporte" value="<%=ReportesAbiertos[i].id_reporte%>" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Usuario">
+                                    <%=ReportesAbiertos[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Gerente">
+                                    <%=ReportesAbiertos[i].id_usuario_manipulo_Reporte%>
+                                </td>
+                                <td data-label="Asignar a">
+                                    <select class="estatus estatusForm" name="UsuarioAsignado" id="Asignar <%=ReportesAbiertos[i].id_reporte%>">
+                                        <option value=""><%=ReportesAbiertos[i].id_usuario_asignado%></option>
+                                    </select>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="Estatus" id="<%=ReportesAbiertos[i].id_reporte%>" onchange="obtenerIdSeleccionadoAbierto(event)">
+                                        <option value="1" id="eliminar"><%=ReportesAbiertos[i].descripcion_estatus%></option>
+                                        <option value="2">En proceso</option>
+                                        <option value="3">En mantenimiento</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip"><%=ReportesAbiertos[i].descripcion_reporte%></div>
+                                </td>
+                                <td data-label="Fecha">
+                                    <div class="descrip"><%=formatearFechaHora(ReportesAbiertos[i].fecha_hora)%></div>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-paper-plane mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%if(typeof MantenimientoFinalizado !== 'undefined' && MantenimientoFinalizado.length>0){%>
+            <div class="contenedorreporte" id="seccion2">
+                <h4 class="titulo">
+                    <i class='bx bxl-slack-old mov bro'></i>Reportes enviados por Gerente de Mantenimiento
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Gerente <h6>Mantenimiento</h6></th>
+                            <th>Gerente <h6>Soporte</h6></th>
+                            <th>Estatus <h6>selecciona</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de modificación</h6></th>
+                            <th>Acciones <h6>asignar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<MantenimientoFinalizado.length;i++){%>
+                        <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteSoporte" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b><%=MantenimientoFinalizado[i].id_reporte%></b>
+                                    <input type="hidden" name="Id_reporte" value="<%=MantenimientoFinalizado[i].id_reporte%>" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Usuario solicitante">
+                                    <%=MantenimientoFinalizado[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Usuario modificador">
+                                    <%=MantenimientoFinalizado[i].id_usuario_manipulo_Reporte%>
+                                </td>
+                                <td data-label="Asignar a">
+                                    <select class="estatus estatusForm" name="UsuarioAsignado" id="">
+                                        <%if(typeof IngenirosSoporte!==undefined && IngenirosSoporte.length>0){%>
+                                            <%for(let i=0;i<IngenirosSoporte.length;i++){%>
+                                                <option value="<%=IngenirosSoporte[i].nombre_usuario%>"><%=IngenirosSoporte[i].nombre_usuario%></option>
+                                            <%}%>
+                                        <%}%>
+                                        <%if(typeof GerenteSop!==undefined && GerenteSop.length>0){%>
+                                            <%for(let i=0;i<GerenteSop.length;i++){%>
+                                                <option value="<%=GerenteSop[i].nombre_usuario%>"><%=GerenteSop[i].nombre_usuario%></option>
+                                            <%}%>
+                                        <%}%>
+                                    </select>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="Estatus" id="">
+                                        <option value=""><%=MantenimientoFinalizado[i].descripcion_estatus%></option>
+                                        <option value="2">En proceso</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip"><%=MantenimientoFinalizado[i].descripcion_reporte%></div>
+                                </td>
+                                <td data-label="Solución">
+                                    <div class="descrip"><%=MantenimientoFinalizado[i].solucion_reporte%></div>
+                                </td>
+                                <td data-label="Fecha">
+                                    <%=formatearFechaHora(MantenimientoFinalizado[i].fecha_hora)%>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-reply mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%if(typeof TodosReportes !== 'undefined' && TodosReportes.length>0){%>
+            <div class="contenedorreporte" id="seccion3">
+                <h4 class="titulo">
+                    <i class='bx bx-album mov bro'></i>Reportes totales
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Id</th>
+                            <th>Usuario</th>
+                            <th>Asignado a:</th>
+                            <th>Asignado por:</th>
+                            <th>Estatus</th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<TodosReportes.length;i++){%>
+                        <tr>
+                            <td data-label="Id">
+                                <b><%=TodosReportes[i].id_reporte%></b>
+                            </td>
+                            <td data-label="Usuario">
+                                <%=TodosReportes[i].id_usuario_solicita%>
+                            </td>
+                            <td data-label="Enviado">
+                                <%=TodosReportes[i].id_usuario_asignado%>
+                            </td>
+                            <td data-label="Enviado">
+                                <%=TodosReportes[i].id_usuario_manipulo_Reporte%>
+                            </td>
+                            <td data-label="Estatus">
+                                <div class="estatus"><%=TodosReportes[i].descripcion_estatus%></div>
+                            </td>
+                            <td data-label="Descripción">
+                                <div class="descrip"><%=TodosReportes[i].descripcion_reporte%></div>
+                            </td>
+                            <td data-label="Solución">
+                                <div class="descrip"><%=TodosReportes[i].solucion_reporte%></div>
+                            </td>
+                            <td data-label="Fecha">
+                                <%=formatearFechaHora(TodosReportes[i].fecha_hora)%>
+                            </td>
+                        </tr>
+                       <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+        </div>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/SelectGerenteSoporte.js"></script>
+       <%if(typeof alerta !== 'undefined'){%>
+        <script src="/js/Alertas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <%if(alerta === 'Reporte Enviado'){%>
+          <script>
+            ReporteAgregado()
+          </script>
+        <%}else if(alerta === 'Error'){%>
+          <script>
+            ErrorServidor()
+          </script>
+        <%}%>
+      <%}%>
+</body>
+</html>
+<%}else{%>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Error - No tienes permisos</title>
+    </head>
+    <body>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        NoPermisos()
+      </script>
+    </body>
+    </html>
+  <%}%>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+<script src="/js/Alertas.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  SesionCaducada()
+</script>
+</body>
+</html>
+<%}%>

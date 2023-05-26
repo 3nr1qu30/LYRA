@@ -1,0 +1,155 @@
+<!-- Marco -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lyra </title>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="/css/dashboardDoctor.css">
+    <link rel="stylesheet" href="/css/indexStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="#">Lyra.</a></div>
+      <ul class="menu">
+          <li><a href="#services">Características</a></li>
+          <li class="bomba"><a class="blanquis" href="/RegistroPacientes">Registro de Pacientes</a></li>
+          <li class="bomba"><a class="blanquis" href="/RegistroPsicologos">Registro de Psicólogos</a></li>
+          <li class="bomba"><a class="blanquis" href="/InicioSesion">Inicio de sesión</a></li>
+          <li class="bomba"><a class="blanquis" href="/prueba">Prueba de audio</a></li>
+          <div class="cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+      </ul>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+<!-- Home Section Start -->
+ <section class="home" id="home">
+   <div class="home-content">
+     <div class="text">
+       <div class="text-one">Hola</div>
+       <div class="text-two">Lyra</div>
+       <div class="text-three">Habla conmigo :)</div>
+       <div class="text-four">Prueba la aplicación</div>
+       <a href="/InicioSesion" class="button ">
+        <button class="espacio">Inicia sesión</button>
+       </a>
+     </div>
+      <button class="iconLy"></button>
+      
+   </div>
+ </section>
+
+
+
+
+
+<!-- My Services Section Start -->
+ <section class="services" id="services">
+   <div class="content">
+     <div class="title"><span>Características</span></div>
+     <div class="boxes">
+       <div class="box">
+         <div class="icon">
+           <i class="fas fa-accessible-icon"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+       <div class="box">
+         <div class="icon">
+           <i class="fa fa-cloudscale"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+       <div class="box">
+         <div class="icon">
+           <i class="fas fa-chart-line"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+       <div class="box">
+         <div class="icon">
+           <i class="fab fa-android"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+       <div class="box">
+         <div class="icon">
+           <i class="fas fa-camera-retro"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+       <div class="box">
+         <div class="icon">
+           <i class="fas fa-tablet-alt"></i>
+       </div>
+       <div class="topic">Servicio</div>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+     </div>
+   </div>
+   </div>
+ </section>
+
+ <!-- Preguntas frecuentes -->
+<section class="contact" id="contact">
+  <div class="content">
+    <div class="title"><span>Preguntas frecuentes</span></div>
+    <div class="text">
+      <%if(typeof FAQS !== 'undefined' && FAQS.length>0){%>
+        <%for(let i = 0; i<FAQS.length;i++){%>
+        <!--Una FAQ-->
+        <div class="faq-box">
+          <div class="question">
+            <h3><%=FAQS[i].pregunta%></h3>
+          </div>
+          <div class="answer">
+            <p><%=FAQS[i].respuesta%></p>
+          </div>
+        </div>
+        <!--Una FAQ-->
+        <%}%>
+      <%}%>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer Section Start -->
+<footer>
+  <div class="text">
+    <span>Desarrollado por <a href="#">ECLYS</a> | &#169; 2023</span>
+  </div>
+</footer>
+
+  <script src="/js/scriptIndex.js">
+  </script>
+</body>
+</html>

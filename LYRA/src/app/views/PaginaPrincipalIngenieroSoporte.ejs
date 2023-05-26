@@ -1,0 +1,363 @@
+<%if(typeof Usuario !== 'undefined'){%>
+    <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 5|| typeof TipoUsu !== 'undefined' && TipoUsu === 3){%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/pacientesLyra.css">
+    <link rel="stylesheet" href="/css/PPP.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+<body>
+    <body>
+                <!--La barra-->
+                <%if(TipoUsu === 5){%>
+                    <nav class="sidebar close">
+                      <header>
+                          <div class="image-text">
+                              <span class="image">
+                                  <img src="logo.png" alt="">
+                              </span>
+                              <div class="text logo-text">
+                                  <span class="name">Lyra</span>
+                                  <span class="profession">Soporte</span>
+                              </div>
+                          </div>
+                          <i class='bx bx-menu toggle iconblack'></i>
+                      </header>
+                      <div class="menu-bar">
+                          <div class="menu">
+                              <li class="search-box">
+                                  <a href="#">
+                                      <i class='bx bx-home-alt icon' ></i>
+                                      <span class="text nav-text">Principal</span>
+                                  </a>
+                              </li>
+                              <ul class="menu-links">
+                                  <li class="nav-link">
+                                      <a href="/Soporte/EditarPerfil">
+                                          <i class='bx bx-pen icon' ></i>
+                                          <span class="text nav-text">
+                                              Modificar <br> <h6>Perfil</h6>
+                                          </span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="bottom-content">
+                              <li class="">
+                                  <a href="/" class="text nav-text">Cerrar sesión</span>
+                                  </a>
+                              </li>
+                              <li class="mode">
+                                  <div class="sun-moon">
+                                      <i class='bx bx-moon icon moon'></i>
+                                      <i class='bx bx-sun icon sun'></i>
+                                  </div>
+                                  <span class="mode-text text">Barra oscura</span>
+              
+                                  <div class="toggle-switch">
+                                      <span class="switch"></span>
+                                  </div>
+                              </li>
+                          </div>
+                      </div>
+                  </nav>
+                  <%}else if(TipoUsu === 3){%>
+                    <nav class="sidebar close">
+                        <header>
+                            <div class="image-text">
+                                <span class="image">
+                                    <img src="logo.png" alt="">
+                                </span>
+                                <div class="text logo-text">
+                                    <span class="name">Lyra</span>
+                                    <span class="profession">Soporte</span>
+                                </div>
+                            </div>
+                            <i class='bx bx-menu toggle iconblack'></i>
+                        </header>
+                        <div class="menu-bar">
+                            <div class="menu">
+                                <li class="search-box">
+                                    <a href="/Soporte/GerenteSoporte">
+                                        <i class='bx bx-home-alt icon' ></i>
+                                        <span class="text nav-text">Lyra</span>
+                                    </a>
+                                </li>
+                                <ul class="menu-links">
+                                    <li class="nav-link">
+                                        <a href="/Soporte/Asistente">
+                                            <i class='bx bx-pen icon' ></i>
+                                            <span class="text nav-text">
+                                                Asistente <br> <h6>Soporte</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/EditorFAQ">
+                                            <i class='bx bx-message-dots icon' ></i>
+                                            <span class="text nav-text">
+                                                Editor <br> <h6>FAQ</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/GerenteMantenimiento">
+                                            <i class='bx bx-brush icon'></i>
+                                            <span class="text nav-text mini">
+                                                Gerente <br> <h6>Mantenimiento</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/IngenieroSoporte">
+                                            <i class='bx bx-adjust icon' ></i>
+                                            <span class="text nav-text mini">
+                                                Ingeniero <br> <h6>Soporte</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/IngenieroMantenimiento">
+                                            <i class='bx bx-heart icon' ></i>
+                                            <span class="text nav-text mini">
+                                                Ingeniero <br> <h6>Mantenimiento</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/GerenteSoporte">
+                                            <i class='bx bx-diamond icon' ></i>
+                                            <span class="text nav-text mini">
+                                                Gerente <br> <h6>Soporte</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/AgregarEmpleados">
+                                            <i class='bx bx-plus-circle icon' ></i>
+                                            <span class="text nav-text mini">
+                                                Agregar <br> <h6>Usuarios</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/Soporte/EditarPerfil">
+                                            <i class='bx bx-pencil icon' ></i>
+                                            <span class="text nav-text mini">
+                                                Editar <br> <h6>Datos personales</h6>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bottom-content">
+                                <li class="">
+                                    <a href="/">
+                                        <i class='bx bx-log-out icon' ></i>
+                                        <span class="text nav-text">Cerrar sesión</span>
+                                    </a>
+                                </li>
+                                <li class="mode">
+                                    <div class="sun-moon">
+                                        <i class='bx bx-moon icon moon'></i>
+                                        <i class='bx bx-sun icon sun'></i>
+                                    </div>
+                                    <span class="mode-text text">Barra oscura</span>
+                
+                                    <div class="toggle-switch">
+                                        <span class="switch"></span>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </nav>
+                  <%}%>
+              <!--La barra-->
+                <div class="containerP">
+            <h2>Bienvenido: <%=datosUsuario[0].nombre%> <%=datosUsuario[0].apellido%></h2>
+            <%if(TipoUsu===3){%>
+                <h6>Gerente de soporte</h6>
+            <%}else{%>
+                <h6>Ingeniero de soporte</h6>
+            <%}%>
+            <a href="#seccion1" class="botonAcc color1">
+                <i class='bx bx-bolt-circle movers'></i> Solucionar o cerrar reportes
+            </a>
+            <a href="#seccion2" class="botonAcc color1">
+                <i class='bx bx-circle movers'></i> Cerrar reportes
+            </a>
+            <%if(TipoUsu === 5){%>
+                <%if(typeof ReportesEnProcesoPersonal !== 'undefined' && ReportesEnProcesoPersonal.length>0){%>
+            <div class="contenedorreporte" id="seccion1">
+                <h4 class="titulo">
+                    <i class='bx bx-wink-tongue mov bro'></i>Reportes enviados por el gerente de soporte
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Usuario <h6>manipulante</h6> </th>
+                            <th>Estatus <h6>en proceso</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de envío</h6></th>
+                            <th>Acciones <h6>Editar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<ReportesEnProcesoPersonal.length;i++){%>
+                        <form action="/Soporte/IngenieroMantenimiento/ActualizarReportesIngenieroSoporte" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b><%=ReportesEnProcesoPersonal[i].id_reporte%></b>
+                                    <input type="hidden" name="Id_reporte" value="<%=ReportesEnProcesoPersonal[i].id_reporte%>" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Usuario">
+                                    <%=ReportesEnProcesoPersonal[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Gerente">
+                                    <%=ReportesEnProcesoPersonal[i].id_usuario_manipulo_Reporte%>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="Estatus" id="">
+                                        <option value="1"><%=ReportesEnProcesoPersonal[i].descripcion_estatus%></option>
+                                        <option value="7">Solucionado</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip"><%=ReportesEnProcesoPersonal[i].descripcion_reporte%></div>
+                                </td>
+                                <td data-label="Solución">
+                                    <%if(ReportesEnProcesoPersonal[i].solucion_reporte===""){%>
+                                    <textarea class="descrip estatusForm edittex agrandable" name="Solucion"><%=ReportesEnProcesoPersonal[i].solucion_reporte%></textarea>
+                                    <%}else{%>
+                                        <textarea readonly class="descrip estatusForm edittex agrandable" name="Solucion"><%=ReportesEnProcesoPersonal[i].solucion_reporte%></textarea>
+                                    <%}%>
+                                </td>
+                                <td data-label="Fecha">
+                                    <div class="descrip"><%=formatearFechaHora(ReportesEnProcesoPersonal[i].fecha_hora)%></div>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%}%>
+            <div class="contenedorreporte" id="seccion2">
+                <h4 class="titulo">
+                    <i class='bx bx-circle mov bro'></i>Reportes solucionados
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Usuario <h6>manipulante</h6> </th>
+                            <th>Usuario <h6>asignado</h6></th>
+                            <th>Estatus <h6>Solucionado</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de envío</h6></th>
+                            <th>Acciones <h6>Editar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <form action="" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b>1</b>
+                                    <input type="hidden" value="" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Usuario">
+                                    Usuario
+                                </td>
+                                <td data-label="Gerente">
+                                    Persona
+                                </td>
+                                <td data-label="Asignar a">
+                                    <select class="estatus estatusForm" name="" id="">
+                                        <option value="">Selecciona</option>
+                                        <option value="">id y nombre de usuario</option>
+                                    </select>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="" id="">
+                                        <option value="">Selecciona</option>
+                                        <option value="">Cerrado</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip">ayuda dios por favor</div>
+                                </td>
+                                <td data-label="Solución">
+                                    <div class="descrip">ayuda dios por favor</div>
+                                </td>
+                                <td data-label="Fecha">
+                                    <div class="descrip"> dd/mm/aaaa</div>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <script src="/js/sidebar.js"></script>
+        <script src="/js/PPP.js"></script>
+        <script src="/js/asisVali.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</body>
+</html>
+<%}else{%>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Error - No tienes permisos</title>
+    </head>
+    <body>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        NoPermisos()
+      </script>
+    </body>
+    </html>
+  <%}%>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+<script src="/js/Alertas.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  SesionCaducada()
+</script>
+</body>
+</html>
+<%}%>

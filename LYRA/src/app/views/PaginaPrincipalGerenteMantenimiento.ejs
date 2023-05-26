@@ -1,0 +1,650 @@
+<%if(typeof Usuario !== 'undefined'){%>
+    <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 4|| typeof TipoUsu !== 'undefined' && TipoUsu === 3){%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <script>
+        const IngenirosMantenimiento = <%- JSON.stringify(IngenirosMantenimiento) %>;
+        const GerenteSop = <%- JSON.stringify(GerenteSop) %>;
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/pacientesLyra.css">
+    <link rel="stylesheet" href="/css/PPP.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+
+
+</head>
+<body>
+    <body>
+        <%if(TipoUsu === 4){%>
+            <nav class="sidebar close">
+              <header>
+                  <div class="image-text">
+                      <span class="image">
+                          <img src="logo.png" alt="">
+                      </span>
+                      <div class="text logo-text">
+                          <span class="name">Lyra</span>
+                          <span class="profession">Soporte</span>
+                      </div>
+                  </div>
+                  <i class='bx bx-menu toggle iconblack'></i>
+              </header>
+              <div class="menu-bar">
+                  <div class="menu">
+                      <li class="search-box">
+                          <a href="#">
+                              <i class='bx bx-home-alt icon' ></i>
+                              <span class="text nav-text">Principal</span>
+                          </a>
+                      </li>
+                      <ul class="menu-links">
+                          <li class="nav-link">
+                              <a href="/Soporte/EditarPerfil">
+                                  <i class='bx bx-pen icon' ></i>
+                                  <span class="text nav-text">
+                                      Modificar <br> <h6>Perfil</h6>
+                                  </span>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="bottom-content">
+                      <li class="">
+                          <a href="/" class="text nav-text">Cerrar sesión</span>
+                          </a>
+                      </li>
+                      <li class="mode">
+                          <div class="sun-moon">
+                              <i class='bx bx-moon icon moon'></i>
+                              <i class='bx bx-sun icon sun'></i>
+                          </div>
+                          <span class="mode-text text">Barra oscura</span>
+      
+                          <div class="toggle-switch">
+                              <span class="switch"></span>
+                          </div>
+                      </li>
+                  </div>
+              </div>
+          </nav>
+          <%}else if(TipoUsu === 3){%>
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="logo.png" alt="">
+                        </span>
+                        <div class="text logo-text">
+                            <span class="name">Lyra</span>
+                            <span class="profession">Soporte</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-menu toggle iconblack'></i>
+                </header>
+                <div class="menu-bar">
+                    <div class="menu">
+                        <li class="search-box">
+                            <a href="/Soporte/GerenteSoporte">
+                                <i class='bx bx-home-alt icon' ></i>
+                                <span class="text nav-text">Lyra</span>
+                            </a>
+                        </li>
+                        <ul class="menu-links">
+                            <li class="nav-link">
+                                <a href="/Soporte/Asistente">
+                                    <i class='bx bx-pen icon' ></i>
+                                    <span class="text nav-text">
+                                        Asistente <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/EditorFAQ">
+                                    <i class='bx bx-message-dots icon' ></i>
+                                    <span class="text nav-text">
+                                        Editor <br> <h6>FAQ</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/GerenteMantenimiento">
+                                    <i class='bx bx-brush icon'></i>
+                                    <span class="text nav-text mini">
+                                        Gerente <br> <h6>Mantenimiento</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/IngenieroSoporte">
+                                    <i class='bx bx-adjust icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Ingeniero <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="">
+                                    <i class='bx bx-heart icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Ingeniero <br> <h6>Mantenimiento</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/GerenteSoporte">
+                                    <i class='bx bx-diamond icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Gerente <br> <h6>Soporte</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/AgregarEmpleados">
+                                    <i class='bx bx-plus-circle icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Agregar <br> <h6>Usuarios</h6>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/Soporte/EditarPerfil">
+                                    <i class='bx bx-pencil icon' ></i>
+                                    <span class="text nav-text mini">
+                                        Editar <br> <h6>Datos personales</h6>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-content">
+                        <li class="">
+                            <a href="/">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                        <li class="mode">
+                            <div class="sun-moon">
+                                <i class='bx bx-moon icon moon'></i>
+                                <i class='bx bx-sun icon sun'></i>
+                            </div>
+                            <span class="mode-text text">Barra oscura</span>
+        
+                            <div class="toggle-switch">
+                                <span class="switch"></span>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+          <%}%>
+      <!--La barra-->
+        <div class="containerP">
+            <h2>Bienvenido: <%=datosUsuario[0].nombre%> <%=datosUsuario[0].apellido%></h2></h2>
+            <%if(TipoUsu===3){%>
+            <h6>Gerente de soporte</h6>
+            <%}else{%>
+            <h6>Gerente de mantenimiento</h6>
+            <%}%>
+            
+            <a href="#1" class="botonAcc color1">
+                <i class='bx bx-circle movers'></i> Reportes del gerente de soporte
+            </a>
+            <a href="#2" class="botonAcc color1">
+                <i class='bx bxl-slack-old movers'></i> Reportes del ingeniero de mantenimiento
+            </a>
+            <a href="#3" class="botonAcc color1">
+                <i class='bx bxs-analyse movers'></i> Reportes del gerente de mantenimiento
+            </a>
+            <%if(TipoUsu === 4){%>
+            <%if(typeof ReportesMantenimientoPersonal !== 'undefined' && ReportesMantenimientoPersonal.length>0){%>
+            <div class="contenedorreporte" id="1">
+                <h4 class="titulo">
+                    <i class='bx bx-circle mov bro'></i>Reportes enviados por el gerente de soporte
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Usuario <h6>modificador</h6></th>
+                            <th>Usuario <h6>asignado</h6></th>
+                            <th>Estatus <h6>modificar</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de modificación</h6></th>
+                            <th>Acciones <h6>asignar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<ReportesMantenimientoPersonal.length;i++){%>
+                        <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteMantenimiento" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b><%=ReportesMantenimientoPersonal[i].id_reporte%></b>
+                                    <input type="hidden" name="Id_reporte" value="<%=ReportesMantenimientoPersonal[i].id_reporte%>" placeholder="folio reporte">
+                                </td>
+                                <td data-label="Usuario solicitante">
+                                    <%=ReportesMantenimientoPersonal[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Usuario modificador">
+                                    <%=ReportesMantenimientoPersonal[i].id_usuario_manipulo_Reporte%>
+                                </td>
+                                <td data-label="Usuario asignado">
+                                    <select class="estatus estatusForm" name="UsuarioAsignado" id="">
+                                        <%if(typeof IngenirosMantenimiento!==undefined && IngenirosMantenimiento.length>0){%>
+                                            <%for(let i=0;i<IngenirosMantenimiento.length;i++){%>
+                                                <option value="<%=IngenirosMantenimiento[i].nombre_usuario%>"><%=IngenirosMantenimiento[i].nombre_usuario%></option>
+                                            <%}%>
+                                        <%}%>
+                                        <%if(typeof GerenteSop!==undefined && GerenteSop.length>0){%>
+                                            <%for(let i=0;i<GerenteSop.length;i++){%>
+                                                <option value="<%=GerenteSop[i].nombre_usuario%>"><%=GerenteSop[i].nombre_usuario%></option>
+                                            <%}%>
+                                        <%}%>
+                                    </select>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="Estatus" id="">
+                                        <option value="1"><%=ReportesMantenimientoPersonal[i].descripcion_estatus%></option>
+                                        <option value="4">En programación</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip"><%=ReportesMantenimientoPersonal[i].descripcion_reporte%></div></div>
+                                </td>
+                                <td data-label="Solución">
+                                    <div class="descrip"><%=ReportesMantenimientoPersonal[i].solucion_reporte%></div>
+                                </td>
+                                <td data-label="Fecha">
+                                    <%=formatearFechaHora(ReportesMantenimientoPersonal[i].fecha_hora)%>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button type="submit" class="accion"><i class='bx bx-paper-plane mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%}else{%>
+                <%if(typeof ReportesMantenimiento !== 'undefined' && ReportesMantenimiento.length>0){%>
+                <div class="contenedorreporte" id="yo 1">
+                    <h4 class="titulo">
+                        <i class='bx bx-circle mov bro'></i>Reportes enviados por el gerente de soporte
+                    </h4>
+                    <table>
+                        <thead class="titulosIndiv">
+                            <tr>
+                                <th class="colm">Folio</th>
+                                <th>Usuario <h6>solicitante</h6></th>
+                                <th>Usuario <h6>modificador</h6></th>
+                                <th>Usuario <h6>asignado</h6></th>
+                                <th>Estatus <h6>modificar</h6></th>
+                                <th class="colg">Descripción</th>
+                                <th class="colg">Solución</th>
+                                <th>Fecha <h6>de modificación</h6></th>
+                                <th>Acciones <h6>asignar</h6></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(let i = 0; i<ReportesMantenimiento.length;i++){%>
+                            <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteMantenimiento" method="post">
+                                <tr>
+                                    <td data-label="Folio">
+                                        <b><%=ReportesMantenimiento[i].id_reporte%></b>
+                                        <input type="hidden" name="Id_reporte" value="<%=ReportesMantenimiento[i].id_reporte%>" placeholder="folio reporte">
+                                    </td>
+                                    <td data-label="Usuario solicitante">
+                                        <%=ReportesMantenimiento[i].id_usuario_solicita%>
+                                    </td>
+                                    <td data-label="Usuario modificador">
+                                        <%=ReportesMantenimiento[i].id_usuario_manipulo_Reporte%>
+                                    </td>
+                                    <td data-label="Usuario asignado">
+                                        <select class="estatus estatusForm" name="UsuarioAsignado" id="">
+                                            <%if(typeof IngenirosMantenimiento!==undefined && IngenirosMantenimiento.length>0){%>
+                                                <%for(let i=0;i<IngenirosMantenimiento.length;i++){%>
+                                                    <option value="<%=IngenirosMantenimiento[i].nombre_usuario%>"><%=IngenirosMantenimiento[i].nombre_usuario%></option>
+                                                <%}%>
+                                            <%}%>
+                                            <%if(typeof GerenteSop!==undefined && GerenteSop.length>0){%>
+                                                <%for(let i=0;i<GerenteSop.length;i++){%>
+                                                    <option value="<%=GerenteSop[i].nombre_usuario%>"><%=GerenteSop[i].nombre_usuario%></option>
+                                                <%}%>
+                                            <%}%>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estatus">
+                                        <select class="estatus estatusForm" name="Estatus" id="">
+                                            <option value="1"><%=ReportesMantenimiento[i].descripcion_estatus%></option>
+                                            <option value="4">En programación</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Descripción">
+                                        <div class="descrip"><%=ReportesMantenimiento[i].descripcion_reporte%></div></div>
+                                    </td>
+                                    <td data-label="Solución">
+                                        <div class="descrip"><%=ReportesMantenimiento[i].solucion_reporte%></div>
+                                    </td>
+                                    <td data-label="Fecha">
+                                        <%=formatearFechaHora(ReportesMantenimiento[i].fecha_hora)%>
+                                    </td>
+                                    <td data-label="Editar" class="center">
+                                        <button type="submit" class="accion"><i class='bx bx-paper-plane mov'></i></button>
+                                    </td>
+                                </tr>
+                            </form>
+                            <%}%>
+                        </tbody>
+                    </table>
+                </div>
+            <%}%>
+            <%}%>
+            <%if(TipoUsu === 4){%>
+                <%if(typeof ReportesFinalizadoMantenimientoPersonal !== 'undefined' && ReportesFinalizadoMantenimientoPersonal.length>0){%>
+            <div class="contenedorreporte" id="yo 2">
+                <h4 class="titulo">
+                    <i class='bx bxl-slack-old mov bro'></i>Reportes enviados por el ingeniero de mantenimiento
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario <h6>solicitante</h6></th>
+                            <th>Usuario <h6>modificador</h6></th>
+                            <th>Usuario <h6>asignado</h6></th>
+                            <th>Estatus <h6>nose</h6></th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de modificación</h6></th>
+                            <th>Acciones <h6>asignar</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<ReportesFinalizadoMantenimientoPersonal.length;i++){%>
+                        <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteMantenimiento" method="post">
+                            <tr>
+                                <td data-label="Folio">
+                                    <b><%=ReportesFinalizadoMantenimientoPersonal[i].id_reporte%></b>
+                                        <input type="hidden" name="Id_reporte" value="<%=ReportesFinalizadoMantenimientoPersonal[i].id_reporte%>" placeholder="folio reporte">
+                                    </td>
+                                <td data-label="Usuario solicitante">
+                                    <%=ReportesFinalizadoMantenimientoPersonal[i].id_usuario_solicita%>
+                                </td>
+                                <td data-label="Usuario modificador">
+                                    <%=ReportesFinalizadoMantenimientoPersonal[i].id_usuario_manipulo_Reporte%>
+                                    
+                                </td>
+                                <td data-label="Usuario asignado">
+                                    <select class="estatus estatusForm" name="UsuarioAsignado" id="Asignar <%=ReportesFinalizadoMantenimientoPersonal[i].id_reporte%>">
+                                        <option value=""><%=ReportesFinalizadoMantenimientoPersonal[i].id_usuario_asignado%></option>
+                                    </select>
+                                </td>
+                                <td data-label="Estatus">
+                                    <select class="estatus estatusForm" name="Estatus" id="<%=ReportesFinalizadoMantenimientoPersonal[i].id_reporte%>" onchange="obtenerIdSeleccionadoAbierto(event)">
+                                        <option value="1" id="eliminar"><%=ReportesFinalizadoMantenimientoPersonal[i].descripcion_estatus%></option>
+                                        <option value="4">En programación</option>
+                                        <option value="6">Mantenimiento finalizado</option>
+                                    </select>
+                                </td>
+                                <td data-label="Descripción">
+                                    <div class="descrip"><%=ReportesFinalizadoMantenimientoPersonal[i].descripcion_reporte%></div>
+                                </td>
+                                <td data-label="Solución">
+                                    <div class="descrip"><%=ReportesFinalizadoMantenimientoPersonal[i].solucion_reporte%></div>
+                                </td>
+                                <td data-label="Fecha">
+                                    <%=formatearFechaHora(ReportesFinalizadoMantenimientoPersonal[i].fecha_hora)%>
+                                </td>
+                                <td data-label="Editar" class="center">
+                                    <button class="accion"><i class='bx bx-paper-plane mov'></i></button>
+                                </td>
+                            </tr>
+                        </form>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%}else{%>
+                <%if(typeof ReportesFinalizadoMantenimiento !== 'undefined' && ReportesFinalizadoMantenimiento.length>0){%>
+                    <div class="contenedorreporte" id="yo 2">
+                        <h4 class="titulo">
+                            <i class='bx bxl-slack-old mov bro'></i>Reportes enviados por el ingeniero de mantenimiento
+                        </h4>
+                        <table>
+                            <thead class="titulosIndiv">
+                                <tr>
+                                    <th class="colm">Folio</th>
+                                    <th>Usuario <h6>solicitante</h6></th>
+                                    <th>Usuario <h6>modificador</h6></th>
+                                    <th>Usuario <h6>asignado</h6></th>
+                                    <th>Estatus <h6>nose</h6></th>
+                                    <th class="colg">Descripción</th>
+                                    <th class="colg">Solución</th>
+                                    <th>Fecha <h6>de modificación</h6></th>
+                                    <th>Acciones <h6>asignar</h6></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(let i = 0; i<ReportesFinalizadoMantenimiento.length;i++){%>
+                                <form action="/Soporte/GerenteSoporte/ActualizarReportesGerenteMantenimiento" method="post">
+                                    <tr>
+                                        <td data-label="Folio">
+                                            <b><%=ReportesFinalizadoMantenimiento[i].id_reporte%></b>
+                                                <input type="hidden" name="Id_reporte" value="<%=ReportesFinalizadoMantenimiento[i].id_reporte%>" placeholder="folio reporte">
+                                            </td>
+                                        <td data-label="Usuario solicitante">
+                                            <%=ReportesFinalizadoMantenimiento[i].id_usuario_solicita%>
+                                        </td>
+                                        <td data-label="Usuario modificador">
+                                            <%=ReportesFinalizadoMantenimiento[i].id_usuario_manipulo_Reporte%>
+                                            
+                                        </td>
+                                        <td data-label="Usuario asignado">
+                                            <select class="estatus estatusForm" name="UsuarioAsignado" id="Asignar <%=ReportesFinalizadoMantenimiento[i].id_reporte%>">
+                                                <option value=""><%=ReportesFinalizadoMantenimiento[i].id_usuario_asignado%></option>
+                                            </select>
+                                        </td>
+                                        <td data-label="Estatus">
+                                            <select class="estatus estatusForm" name="Estatus" id="<%=ReportesFinalizadoMantenimiento[i].id_reporte%>" onchange="obtenerIdSeleccionadoAbierto(event)">
+                                                <option value="1" id="eliminar"><%=ReportesFinalizadoMantenimiento[i].descripcion_estatus%></option>
+                                                <option value="4" id="n">En programación</option>
+                                                <option value="6" id="o">Mantenimiento finalizado</option>
+                                            </select>
+                                        </td>
+                                        <td data-label="Descripción">
+                                            <div class="descrip"><%=ReportesFinalizadoMantenimiento[i].descripcion_reporte%></div>
+                                        </td>
+                                        <td data-label="Solución">
+                                            <div class="descrip"><%=ReportesFinalizadoMantenimiento[i].solucion_reporte%></div>
+                                        </td>
+                                        <td data-label="Fecha">
+                                            <%=formatearFechaHora(ReportesFinalizadoMantenimiento[i].fecha_hora)%>
+                                        </td>
+                                        <td data-label="Editar" class="center">
+                                            <button class="accion"><i class='bx bx-paper-plane mov'></i></button>
+                                        </td>
+                                    </tr>
+                                </form>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                <%}%>
+            <%}%>
+            <%if(TipoUsu === 4){%>
+                <%if(typeof TodosReportesPersonales !== 'undefined' && TodosReportesPersonales.length>0){%>
+            <div class="contenedorreporte" id="yo 3">
+                <h4 class="titulo">
+                    <i class='bx bxs-analyse mov bro'></i>Reportes enviados por el gerente de mantenimiento
+                </h4>
+                <table>
+                    <thead class="titulosIndiv">
+                        <tr>
+                            <th class="colm">Folio</th>
+                            <th>Usuario</th>
+                            <th>Asignado por:</th>
+                            <th>Asignado a:</th>
+                            <th>Estatus</th>
+                            <th class="colg">Descripción</th>
+                            <th class="colg">Solución</th>
+                            <th>Fecha <h6>de modificación</h6></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(let i = 0; i<TodosReportesPersonales.length;i++){%>
+                        <tr>
+                            <td data-label="Folio">
+                                <b><%=TodosReportesPersonales[i].id_reporte%></b>
+                            </td>
+                            <td data-label="Usuario solicitante">
+                                <%=TodosReportesPersonales[i].id_usuario_solicita%>
+                            </td>
+                            <td data-label="Usuario modificador">
+                                <%=TodosReportesPersonales[i].id_usuario_manipulo_Reporte%>
+                            </td>
+                            <td data-label="Usuario asignado">
+                                <%=TodosReportesPersonales[i].id_usuario_asignado%>
+                            </td>
+                            <td data-label="Estatus">
+                                <div class="estatus"><%=TodosReportesPersonales[i].descripcion_estatus%></div>
+                            </td>
+                            <td data-label="Descripción">
+                                <div class="descrip"><%=TodosReportesPersonales[i].descripcion_reporte%></div>
+                            </td>
+                            <td data-label="Solución">
+                                <div class="descrip"><%=TodosReportesPersonales[i].solucion_reporte%></div>
+                            </td>
+                            <td data-label="Fecha">
+                                <%=formatearFechaHora(TodosReportesPersonales[i].fecha_hora)%>
+                            </td>
+                            
+                        </tr>
+                       <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <%}%>
+            <%}else{%>
+                <%if(typeof TodosReportes !== 'undefined' && TodosReportes.length>0){%>
+                    <div class="contenedorreporte" id="yo 3">
+                        <h4 class="titulo">
+                            <i class='bx bxs-analyse mov bro'></i>Reportes enviados por el gerente de mantenimiento
+                        </h4>
+                        <table>
+                            <thead class="titulosIndiv">
+                                <tr>
+                                    <th class="colm">Folio</th>
+                                    <th>Usuario</th>
+                                    <th>Asignado por:</th>
+                                    <th>Asignado a:</th>
+                                    <th>Estatus</th>
+                                    <th class="colg">Descripción</th>
+                                    <th class="colg">Solución</th>
+                                    <th>Fecha <h6>de modificación</h6></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(let i = 0; i<TodosReportes.length;i++){%>
+                                <tr>
+                                    <td data-label="Folio">
+                                        <b><%=TodosReportes[i].id_reporte%></b>
+                                    </td>
+                                    <td data-label="Usuario solicitante">
+                                        <%=TodosReportes[i].id_usuario_solicita%>
+                                    </td>
+                                    <td data-label="Usuario modificador">
+                                        <%=TodosReportes[i].id_usuario_manipulo_Reporte%>
+                                    </td>
+                                    <td data-label="Usuario asignado">
+                                        <%=TodosReportes[i].id_usuario_asignado%>
+                                    </td>
+                                    <td data-label="Estatus">
+                                        <div class="estatus"><%=TodosReportes[i].descripcion_estatus%></div>
+                                    </td>
+                                    <td data-label="Descripción">
+                                        <div class="descrip"><%=TodosReportes[i].descripcion_reporte%></div>
+                                    </td>
+                                    <td data-label="Solución">
+                                        <div class="descrip"><%=TodosReportes[i].solucion_reporte%></div>
+                                    </td>
+                                    <td data-label="Fecha">
+                                        <%=formatearFechaHora(TodosReportes[i].fecha_hora)%>
+                                    </td>
+                                    
+                                </tr>
+                               <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <%}%>
+            <%}%>
+
+        </div>
+    <script src="/js/PPP.js"></script>
+    <script src="/js/asisVali.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/SelectGerenteMantenimiento.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <%if(typeof alerta !== 'undefined'){%>
+        <script src="/js/Alertas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <%if(alerta === 'Reporte Enviado'){%>
+          <script>
+            ReporteAgregado()
+          </script>
+        <%}else if(alerta === 'Error'){%>
+          <script>
+            ErrorServidor()
+          </script>
+        <%}%>
+      <%}%>
+    </body>
+</body>
+</html>
+<%}else{%>
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Error - No tienes permisos</title>
+    </head>
+    <body>
+      <script src="/js/Alertas.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+        NoPermisos()
+      </script>
+    </body>
+    </html>
+  <%}%>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+<script src="/js/Alertas.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  SesionCaducada()
+</script>
+</body>
+</html>
+<%}%>

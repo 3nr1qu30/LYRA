@@ -1,0 +1,172 @@
+<%if(typeof Usuario !== 'undefined'){%>
+  <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 2){%>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modificar mi perfil</title>
+        <link
+        rel="shortcut icon"
+        href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+        type="image/svg"
+        />
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="/css/RegistroPacientesLy.css">
+        <link rel="stylesheet" href="/css/dashboardDoctor.css">
+        <link rel="stylesheet" href="/css/indexStyle2.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <script src="/js/scriptIndex.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+    <!-- Move to up button -->
+    <a href="/Paciente" class="floating-button">
+        <i class="fa fa-arrow-circle-right"></i>
+        <span class="button-text">Regresa al chat</span>
+    </a>
+    <a href="/" class=" floating-button2">
+        <i class="fa fa-close "></i>
+        <span class="button-text">Salir</span>
+    </a>
+
+
+        <div class="login-container big">
+        
+          <div class="login-box">
+
+            <div class="row">
+                <div class="column col1">
+            <h2 class="TextInfo">Editar perfil.</h2>
+            <form method="post" action="/Paciente/EditarPerfil" id="formularioEditarPerfil">
+                <div class="input-container magTop" id="grupo_nombre">
+                    <h4 class="infoLabel">Nombre</h4>
+                    <input type="text" name="Nombre" value="<%=datosUsuario[0].nombre%>" placeholder="Escribe tu nombre"  class="inputTypes">
+                    <p class="form_input_error"><br>El o los nombres deben contener minimo dos letras</p>
+                </div>
+                <div class="input-container magTop magboTom" id="grupo_apellidos">
+                    <h4 class="infoLabel">Apellidos</h4>
+                    <input type="text" name="Apellidos" value="<%=datosUsuario[0].apellido%>" placeholder="Escribe tus apellidos"  class="inputTypes">
+                    <p class="form_input_error"><br>Los apellidos deberán tener como mínimo dos letras</p>
+                </div>
+                <div class="conteneEdadSexo">
+                    <div class="input-container magTop mitades" id="grupo_edad">
+                        <h4 class="infoLabel">Edad</h4>
+                        <input type="number" name="Edad" value="<%=datosUsuario[0].edad%>" placeholder="0 - 100"  class="inputTypes">
+                        <p class="form_input_error"><br>Introduzca una edad válida</p>
+                    </div>
+                    <%if(datosUsuario[0].sexo==='Femenino'){%>
+                    <div class="input-container magTop mitades marginLeft">
+                        <h4 class="infoLabel">Sexo</h4>
+                        <select class="inputTypes2 selectB" name="Sexo">
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
+                    <%}else{%>
+                      <div class="input-container magTop mitades marginLeft">
+                        <h4 class="infoLabel">Sexo</h4>
+                        <select class="inputTypes2 selectB" name="Sexo">
+                          <option value="Masculino">Masculino</option>
+                          <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <%}%>
+                </div>
+                <div class="input-container magTop" id="grupo_email">
+                    <h4 class="infoLabel">Correo electrónico</h4>
+                    <input type="email" name="Correo" value="<%=datosUsuario[0].correo_electronico%>" placeholder="Ejemplo@mail.com"   class="inputTypes">
+                    <p class="form_input_error"><br>Introduzca un correo válido</p>
+                </div>    
+                <button type="submit" class="SubmitBtn dos">Actualizar Perfil</button>
+            </form>
+
+            <form method="post" action="/Paciente/EditarPass" id="formularioEditarPassword">
+              <div class="input-container magTop" id="grupo_password">
+                <h4 class="infoLabel">Contraseña</h4>
+                <input type="password" name="Pass" placeholder="Escribe tu nueva contraseña" required="" class="inputTypes">
+                <p class="form_input_error"><br>La contraseña debe cumplir con 1 mayúscula, 1 número, 1 caracter especial, 8 carácteres totales</p>
+            </div>
+            <button type="submit" class="SubmitBtn dos">Actualizar contraseña</button>
+                                <h3 class="DescriptionInfoBottom">Modifica tus datos de manera<a href="" class="Redirect"> sencilla :)</a> </h3>
+            </form>
+                
+                </div>
+
+                <div class="column col2 colesmuy">
+                    <div class="coles">
+                        <div class="Circlelogo"></div>
+                        <div class="LogoName">Lyra</div>
+                        <div class="LogoName2">Cambia tus datos personales</div>
+                    </div>
+                </div>   
+        </div>
+    </div>
+        </div>
+        
+        <script src="/js/editarDatosPaci.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <%if(typeof alerta !== 'undefined'){%>
+          <script src="/js/Alertas.js"></script>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          <%if(alerta === 'Datos Actualizados'){%>
+            <script>
+              DatosActulizados()
+            </script>
+          <%}else if(alerta === 'Error'){%>
+            <script>
+              DatosNoActulizados()
+            </script>
+          <%}else if(alerta ==='Pass Actualizada'){%>
+            <script>
+              PassActulizada()
+            </script>
+          <%}else if(alerta ==='Error Pass'){%>
+            <script>
+              PassNoActulizada()
+            </script>
+          <%}%>
+        <%}%>
+
+    </body>   
+    </html>
+
+    <%}else{%>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Error - No tienes permisos</title>
+      </head>
+      <body>
+        <script src="/js/Alertas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+          NoPermisos()
+        </script>
+      </body>
+      </html>
+    <%}%>
+  <%}else{%>
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <title>Error - Debes Iniciar Sesión</title>
+  </head>
+  <body>
+  <script src="/js/Alertas.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    SesionCaducada()
+  </script>
+  </body>
+  </html>
+  <%}%>

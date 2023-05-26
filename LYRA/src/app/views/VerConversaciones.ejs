@@ -1,0 +1,91 @@
+<%if(typeof Usuario !== 'undefined'){%>
+  <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 1){%>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mensajes</title>
+        <link
+        rel="shortcut icon"
+        href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+        type="image/svg"
+        />
+        <link rel="stylesheet" href="/css/dashboardDoctor.css">
+        <link rel="stylesheet" href="/css/pacientesLyra.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="contenedor">
+
+          <a  href="/" class=" floating-button2">
+            <i class="fa fa-close "></i>
+            <span class="button-text">Salir</span>
+         </a>
+            <%if(typeof PacienteInfo!=='undefined'){%>
+            <div class="Doctor moradoL">
+              <b class="morado">Paciente</b>   <%=PacienteInfo[0].nombre%> <%=PacienteInfo[0].apellido%> 
+            </div>
+            <div class="Info magbtn">
+                Usuario: <%=PacienteInfo[0].nombre_usuario%>
+            </div>
+            <div class="Info">
+                Edad: <%=PacienteInfo[0].edad%> años
+            </div>
+            <%}%>
+            <div class="contenepacientes dops">
+                <i class="fa fa-clock-o icolin icolin2" aria-hidden="true"></i>  Lista de conversaciones
+            </div>
+            <div class="contenepacientes">
+            <%if(Resumenes.length!==0 && typeof Resumenes !== 'undefined'){%>
+              <%for(let i=0;i<Resumenes.length;i++){%>
+                <div class="paciente-container">
+                    <div class="paciente gricesillo">
+                    <h3 class="nombre">#<%=Resumenes[i].id_Resumen%> <%=formatearFechaHora(Resumenes[i].fecha)%></h3>
+                    <h4 class="usuario conversacion"><%=Resumenes[i].resumen%></h4>
+                    </div>
+                  </div>
+                <%}%>
+              <%}%>
+           
+
+              <a class="boton-circular verde" href="/Psicologo">Regresar <button class="agregarpac blanco"> <i class="fa fa-chevron-left "></i></button></a>
+
+
+
+        </div>
+    </body>
+    </html>
+    <%}else{%>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Error - No tienes permisos</title>
+      </head>
+      <body>
+        <script src="/js/Alertas.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+          NoPermisos()
+        </script>
+      </body>
+      </html>
+    <%}%>
+  <%}else{%>
+    <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Error - Debes Iniciar Sesión</title>
+  </head>
+  <body>
+    <script src="/js/Alertas.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      SesionCaducada()
+    </script>
+  </body>
+  </html>
+  <%}%>

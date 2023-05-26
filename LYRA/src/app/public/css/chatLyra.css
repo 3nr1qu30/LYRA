@@ -1,0 +1,373 @@
+/* Reset de estilos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos de la página */
+body {
+  background-color: #F8F8F8;
+  font-family: 'ss', sans-serif;
+  background: linear-gradient(0deg, rgba(243,254,255,1) 0%, rgb(252, 255, 233) 52%, rgba(249,244,255,1) 63%, rgba(255,255,255,1) 100%) !important;
+  background-size: 900% 900%;
+  animation: gradient 50s ease infinite;
+  height: 100vh;
+}
+
+body {
+  background-color: #F2EDFE; /* Color morado de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+
+
+button {
+  background-color: #D4BFFF; /* Color morado oscuro */
+  border-radius: 50%;
+  height: 37vh; /* Altura del botón */
+  width: 37vh; /* Ancho del botón */
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:focus {
+  outline: none;
+}
+
+.microicon {
+  font-size: 20vh !important; 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.microicon2 {
+  font-size: 27vh !important; 
+  color: rgba(255, 255, 255, 0.89);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+button:hover {
+  background-color: #c497eeb0; 
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  animation: shake 0.8s;
+  height: 38vh; /* Altura del botón */
+  width: 38vh; /* Ancho del botón */
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: rotate(-2deg);
+  }
+  
+  20%, 80% {
+    transform: rotate(2deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-2deg);
+  }
+  
+  40%, 60% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes shakeEnd {
+  10%, 90% {
+    transform: rotate(-0deg ) scale(0.9);
+  }
+  
+  20%, 80% {
+    transform: rotate(0deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-0deg) scale(0.9);
+  }
+  
+  40%, 60% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shake2 {
+  10%, 90% {
+    transform: rotate(-0deg ) scale(1.1);
+    background-color: #97a7eeb0;
+  }
+  
+  20%, 80% {
+    transform: rotate(0deg);
+    background-color: #97a7eee8;
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-0deg) scale(1.1);
+    background-color: #97a7eeb0;
+  }
+  
+  40%, 60% {
+    transform: rotate(0deg);
+    background-color: #97a7eee8;
+  }
+}
+@keyframes ripple {
+  to {
+    width: 110%;
+    height: 110%;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.animate:focus {
+  background-color: #97a7eeb0; 
+  height: 33vh; /* Altura del botón */
+  width: 33vh; /* Ancho del botón */
+  animation: shake2 infinite 20s linear;
+}
+
+.animate {
+  background-color: #97a7eeb0; 
+  height: 33vh; /* Altura del botón */
+  width: 33vh; /* Ancho del botón */
+  animation: shake2 infinite 20s linear;
+}
+
+
+.animate:hover {
+  background-color: #db7289b0; 
+  animation:  shakeEnd infinite 20s linear;
+  content: "Cerrar"; /* Código del ícono deseado */
+  font-family: "FontAwesome";
+}
+
+
+.animate::before {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 0;
+height: 0;
+background-color: #ffffff;
+border-radius: 50%;
+opacity: 0.4;
+animation: ripple infinite 1.4s ease-out;
+z-index: -2;
+box-shadow: none !important;
+}
+
+
+
+.microphonemessage {
+  position: absolute;
+  bottom: 21vh;
+  font-size: 5vh;
+  text-align: center;
+  width: 100%;
+  color: #57165f9a;
+  font-weight: bolder;
+}
+
+.displaynone{
+  display: none;
+}
+
+
+
+.floating-button {
+  position: fixed;
+  top: 3vh;
+  right: 20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #c2acf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.floating-button2 {
+  position: fixed;
+  top: 12vh !important;
+  right:  20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #eaacf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.floating-button:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.floating-button2:hover {
+  background-color: #df3636;
+  color: white;
+}
+
+.button-text {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #fff;
+  white-space: nowrap;
+  transition: right 0.3s ease-in-out;
+  color: black;
+}
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.icotamano{
+  font-size: 2.9vh !important;
+}
+
+
+.animate-dots {
+}
+
+.animate-dots span {
+  display: inline-block;
+  opacity: 0;
+  animation: animate-dot 1s ease-in-out infinite;
+}
+
+.animate-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-dots span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.animate-dots span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes animate-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-0.5rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+}
+
+
+.animate-circle {
+  animation: rotate 1.2s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.6);
+    background-color: rgba(91, 91, 233, 0.685) ;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.6);
+    background-color: rgba(91, 91, 233, 0.630) ;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.6);
+    background-color: rgb(91, 91, 233, 0.685) ;
+  }
+}
+
+.animate2 {
+  animation: shake 0.8s;
+  background-color: rgb(243, 50, 50);
+  transform: scale(0.6);
+}
+
+.hablando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaacf0;
+  padding-top: 15px;
+  animation: hablar 1.2s ease-in-out infinite;
+  box-shadow: #e893f0e8 0px 5px, #d686ddce 0px 10px,#e189e9ad 0px 15px,#e78cf091 0px 20px,#e48bec63 0px 25px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background-color: transparent;
+  box-shadow: none;
+  pointer-events: none; 
+  color:  #57165f9a ;
+}
+
+.dy{
+  color:  #57165f9a ;
+}
+
+@keyframes hablar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+
+.microphonemessage{
+  margin-top: 10px !important; 
+  transform: translateY(20px);
+}

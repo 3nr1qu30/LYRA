@@ -1,0 +1,476 @@
+/* Reset de estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos de la página */
+
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  
+  .magTop{
+    margin-top: 10px;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+  .infoLabel{
+    font-size: 13px;
+    margin-bottom: 2px;
+    font-weight: lighter;
+    font-weight: 300;
+  }
+  
+  .login-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 20px;
+    width: 100%;
+    opacity: 0.98;
+    margin-right: 10%;
+    margin-left: 10%;
+    height: auto;
+    max-width: 900px;
+    transform: scale(0.98);
+  }
+  
+  .TextInfo {
+    text-align: left;
+    margin-bottom: 1px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .DescriptionInfoBottom{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 200;
+  }
+  
+  .DescriptionInfo{
+    text-align: center;
+    margin-bottom: 1.3rem;
+    font-size: 19px;
+    font-weight:lighter;
+  
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    position: relative;
+    margin-bottom: 7px;
+  }
+  
+  .inputTypes {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #CCCCCC;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: #F5F5F5;
+    border-radius: 6px;
+    padding-left: 10px;
+    height: 2vh;
+    margin-bottom: -25px;
+    font-size: small;
+    font-weight: bold;
+    color: black;
+  }
+
+
+  .inputTypes:focus {
+    outline: none;
+    border-bottom: 3px solid #D4BFFF;
+  }
+  
+  .MyPlaceholder {
+    position: absolute;
+    top: .3rem;
+    left: 10px;
+    font-size: .5rem;
+    color: #00000093;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .inputTypes:focus ~ .MyPlaceholder, .inputTypes:valid ~ .MyPlaceholder {
+    top: -1.5rem;
+    font-size: 1rem;
+    left: 0px;
+    color: #00000000;
+  }
+  
+  .SubmitBtn {
+    background-color: #D4BFFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    margin-top: 10px;
+    font-size: medium;
+    width: 140px;
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bolder;
+  }
+
+  .SubmitBtn:hover{
+    border-radius: 10px;
+    background-color: #c4b0ec;
+  }
+  
+  
+  
+
+  
+  .Redirect{
+    color: #b38dff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+
+  /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .col1{
+  width: 48%;
+  height: auto;
+  padding: 5vh;
+  }
+
+  .col2{
+    width: 52%;
+    height: 625px;
+  }
+
+  .coles{
+    background-color: #f7f3f9;
+    height: 100%;
+    border-radius: 10px;
+    padding-top: 120px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 100%;
+    }
+   
+      
+        .col2{
+          display: none;
+        }
+  }
+
+
+
+  /* Estilos para la scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #D4BFFF;
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+    transition: all ease .2s;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #8c4eff;
+    
+  }
+
+  .mitades{
+    width: 49%;
+    display: inline-block;
+  }
+
+
+
+.conteneEdadSexo{
+  margin-top: -10px;
+}
+
+
+
+
+
+.inputTypes2 {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  height:35px !important;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  background-color: #F5F5F5;
+  border-radius: 6px;
+  padding-left: 10px;
+  margin-bottom: -25px;
+  font-size: small;
+  font-weight: bold;
+}
+
+
+.inputTypes:focus{
+background-color: #c4b0ec38 ;
+}
+
+
+.selectB:focus{
+  background-color: #c4b0ec38 ;
+}
+
+.LogoName{
+  font-size: 30px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: bold;
+  color: #321c5adc;
+}
+.LogoName2{
+  font-size: 15px;
+  margin: 0 auto;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.Circlelogo{
+  background-color: #ffffff;
+  height: 130px;
+  width: 130px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  display: flex;
+}
+
+.miniInfo{
+  color: #00000085;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.magboTom{
+  margin-bottom:15px ;
+}
+
+.cuadrodatos{
+  height: auto;
+  width: 85%;
+  margin: 0 auto;
+  background-color: #402d45;
+  color: white;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+}
+
+.login-container{
+  transform:scale(1);
+  margin-top: 60px;
+}
+
+.login-box{
+  transform: scale(1);
+}
+
+
+
+
+
+.floating-button {
+  position: fixed;
+  top: 3vh;
+  right: 20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #c2acf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+
+}
+
+.floating-button2 {
+  position: fixed;
+  top: 12vh !important;
+  right:  20px;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 50%;
+  background-color: #eaacf0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 9999;
+
+}
+
+
+.floating-button:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+.floating-button2:hover {
+  background-color: #df3636;
+  color: white;
+}
+
+.button-text {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #fff;
+  white-space: nowrap;
+  transition: right 0.3s ease-in-out;
+  color: black;
+}
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+}
+
+.icotamano{
+  font-size: 2.9vh !important;
+}
+
+
+.animate-dots span {
+  display: inline-block;
+  opacity: 0;
+  animation: animate-dot 1s ease-in-out infinite;
+}
+
+.animate-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-dots span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.animate-dots span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+
+
+.animate-circle {
+  animation: rotate 1.2s infinite linear;
+  pointer-events: none;
+}
+
+
+
+
+
+
+.floating-button:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+
+.floating-button2:hover .button-text {
+  display: block;
+  right: 60px;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: white;
+}
+.colesmuy{
+  height: 580px;
+}
+
+.big{
+  transform: translate(0px);
+}
+
+.form_input_error{
+  display: none;
+}
+
+.form_input_error-activo{
+  color: red;
+  display: block;
+}
+
+.swal-text {
+  text-align: center;
+}

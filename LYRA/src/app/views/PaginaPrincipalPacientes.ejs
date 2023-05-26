@@ -120,79 +120,60 @@
     
         // Comienza a grabar el audio con el dispositivo seleccionado
         const comenzarAGrabar = () => {
-          if (!$listaDeDispositivos.options.length) return alert("No hay dispositivos");
-          // No permitir que se grabe doblemente
-          if (mediaRecorder) return alert("Ya se está grabando");
-    
-          navigator.mediaDevices
-            .getUserMedia({ audio: { deviceId: $listaDeDispositivos.value } })
-            .then((stream) => {
-              // Comenzar a grabar con el stream
-              mediaRecorder = new MediaRecorder(stream);
-              mediaRecorder.start();
-              comenzarAContar();
-              // En el arreglo pondremos los datos que traiga el evento dataavailable
-              const fragmentosDeAudio = [];
-              // Escuchar cuando haya datos disponibles
-              mediaRecorder.addEventListener("dataavailable", (evento) => {
-                // Y agregarlos a los fragmentos
-                fragmentosDeAudio.push(evento.data);
-              });
-              // Cuando se detenga (haciendo click en el botón) se ejecuta esto
-              mediaRecorder.addEventListener("stop", () => {
-                // Detener el stream
-                stream.getTracks().forEach((track) => track.stop());
-                // Detener la cuenta regresiva
-                detenerConteo();
-                // Convertir los fragmentos a un objeto binario
-                const blobAudio = new Blob(fragmentosDeAudio);
-                console.log(blobAudio)
-                // Convertir el archivo de audio a Base64
-                const reader = new FileReader();
-                reader.onloadend = function () {
-                  const base64Data = reader.result.split(",")[1]; // Obtener el contenido Base64 sin el encabezado
-                  // Aquí puedes hacer lo que necesites con la variable base64Data
-                  console.log(base64Data);
-                  const url = 'https://fastapi-production-0f32.up.railway.app/'
-                  const datos={
-                    audioBase64:base64Data
-                  }
-                  fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json; charset=utf-8'
-  },
-  body: JSON.stringify(datos)
-})
-  .then(response => response.blob())
-  .then(blob => {
-    // Crear una URL de datos para el archivo de audio
-    const audioUrl = URL.createObjectURL(blob);
-    
-    // Crear un elemento <a> para descargar el archivo
-    const link = document.createElement('a');
-    link.href = audioUrl;
-    link.download = 'audio.wav'; // Nombre del archivo
-    
-    // Simular un clic en el enlace para iniciar la descarga
-    link.click();
-    
-    // Liberar la URL de datos después de un tiempo para liberar recursos
-    setTimeout(() => URL.revokeObjectURL(audioUrl), 1000);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+  if (!$listaDeDispositivos.options.length) return alert("No hay dispositivos");
+  if (mediaRecorder) return alert("Ya se está grabando");
 
-                }
-                reader.readAsDataURL(blobAudio);
-              });
-            })
-            .catch((error) => {
-              // Aquí maneja el error, tal vez no dieron permiso
-              console.log(error);
-            });
-        };
+  navigator.mediaDevices.getUserMedia({ audio: { deviceId: $listaDeDispositivos.value } })
+    .then((stream) => {
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.start();
+      comenzarAContar();
+
+      const fragmentosDeAudio = [];
+      mediaRecorder.addEventListener("dataavailable", (evento) => {
+        fragmentosDeAudio.push(evento.data);
+      });
+
+      mediaRecorder.addEventListener("stop", () => {
+        stream.getTracks().forEach((track) => track.stop());
+        detenerConteo();
+
+        const audioBlob = new Blob(fragmentosDeAudio, { type: "audio/wav" });
+
+        const formData = new FormData();
+        formData.append("audio", audioBlob, "audio.wav");
+
+        const url = 'https://fastapi-production-0f32.up.railway.app/';
+        fetch(url, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.blob())
+          .then(blob => {
+            const audioUrl = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = audioUrl;
+            link.download = 'audio.wav';
+            link.style.display = 'none';
+            
+            document.body.appendChild(link);
+            
+            link.click();
+            
+            document.body.removeChild(link);
+            URL.revokeObjectURL(audioUrl);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
     
         const detenerConteo = () => {
           clearInterval(idIntervalo);

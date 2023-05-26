@@ -250,7 +250,7 @@ db.BuscarReportesCerrado = ()=>{
 //Enrique
 db.BuscarFAQS = (Usuario)=>{
   return new Promise((resolve, reject) => {
-    con.query(`SELECT * FROM FAQs WHERE id_editor = '${Usuario}'`, (error, result) => {
+    con.query(`SELECT * FROM faqs WHERE id_editor = '${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
         reject(error);
@@ -264,7 +264,7 @@ db.BuscarFAQS = (Usuario)=>{
 //Enrique
 db.BuscarFAQSTodas = ()=>{
   return new Promise((resolve, reject) => {
-    con.query(`SELECT * FROM FAQs`, (error, result) => {
+    con.query(`SELECT * FROM faqs`, (error, result) => {
       if (error) {
         console.error(error);
         reject(error);
@@ -383,7 +383,7 @@ db.AgregarReporte =(Id_UsarioSolici,Id_Manupulo,Id_GerenteSo,Descripcion)=>{
 //Enrique
 db.AgregarFAQ =(Pregunta,Respuesta,Id_editor)=>{
   return new Promise(async(resolve, reject) =>{
-    const query = `INSERT INTO FAQs VALUES 
+    const query = `INSERT INTO faqs VALUES 
     (default,'${Pregunta}','${Respuesta}','${Id_editor}')`;
     con.query(query,(error,result)=>{
       if (error) {
@@ -597,7 +597,7 @@ db.ActualizarReporteIngenieros =(Id_Reporte,UsuarioAsignado,UsuarioManipula,Esta
 
 db.EditarFAQ=(id_FAQs,pregunta,respuesta,Usuario)=>{
   return new Promise(async(resolve, reject)=>{
-    const query = `update FAQs set pregunta='${pregunta}', respuesta='${respuesta}' where id_FAQs='${id_FAQs}'  and id_editor='${Usuario}' `;
+    const query = `update faqs set pregunta='${pregunta}', respuesta='${respuesta}' where id_faqs='${id_FAQs}'  and id_editor='${Usuario}' `;
     con.query(query,(error,result)=>{
       if (error) {
         console.error(error);
@@ -613,7 +613,7 @@ db.EditarFAQ=(id_FAQs,pregunta,respuesta,Usuario)=>{
 //Enrique
 db.EliminarFAQ =(id_FAQs,Usuario)=>{
   return new Promise(async(resolve, reject) =>{
-    const query = `DELETE FROM FAQs WHERE id_FAQs = '${id_FAQs}' AND id_editor = '${Usuario}'`;
+    const query = `DELETE FROM faqs WHERE id_faqs = '${id_FAQs}' AND id_editor = '${Usuario}'`;
     con.query(query,(error,result)=>{
       if (error) {
         console.error(error);

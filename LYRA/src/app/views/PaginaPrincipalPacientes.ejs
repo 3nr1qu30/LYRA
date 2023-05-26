@@ -141,7 +141,7 @@
         const audioBlob = new Blob(fragmentosDeAudio, { type: "audio/wav" });
 
         const formData = new FormData();
-        formData.append("audio", audioBlob, "audio.wav");
+        formData.append("file", audioBlob, "audio.wav");
 
         const url = 'https://fastapi-production-0f32.up.railway.app/';
         fetch(url, {

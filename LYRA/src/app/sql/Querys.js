@@ -18,13 +18,13 @@ const con = mysql.createConnection({
   charset: "utf8"
 });
 
-con.connect((err) => {
+/* con.connect((err) => {
   if (err) {
     console.error('Error conectando la base de datos:', err);
     throw err;
   }
   console.log('Base de datos conectada');
-});
+}); */
 
 const db = {};
 //Consultas

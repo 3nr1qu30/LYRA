@@ -140,43 +140,33 @@
 
         const audioBlob = new Blob(fragmentosDeAudio, { type: "audio/wav" });
 
-        const reader = new FileReader();
-        reader.onloadend = function () {
-          const base64Data = reader.result.split(",")[1];
-          console.log(base64Data);
-          const datos={
-            audioBase64:base64Data
-          }
+        const formData = new FormData();
+        formData.append("audio", audioBlob, "audio.wav");
 
-          const url = 'https://fastapi-production-0f32.up.railway.app/';
-          fetch(url, {
-            method: 'POST',
-            headers: {
-    'Content-Type': 'application/json; charset=utf-8'
-  },
-  body: JSON.stringify(datos)
-})
-            .then(response => response.blob())
-            .then(blob => {
-              const audioUrl = URL.createObjectURL(blob);
+        const url = 'https://fastapi-production-0f32.up.railway.app/';
+        fetch(url, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.blob())
+        .then(blob => {
+          const audioUrl = URL.createObjectURL(blob);
 
-              const link = document.createElement('a');
-              link.href = audioUrl;
-              link.download = 'audio.wav';
-              link.style.display = 'none';
+          const link = document.createElement('a');
+          link.href = audioUrl;
+          link.download = 'audio.wav';
+          link.style.display = 'none';
 
-              document.body.appendChild(link);
+          document.body.appendChild(link);
 
-              link.click();
+          link.click();
 
-              document.body.removeChild(link);
-              URL.revokeObjectURL(audioUrl);
-            })
-            .catch(error => {
-              console.log(error);
-            });
-        };
-        reader.readAsDataURL(audioBlob);
+          document.body.removeChild(link);
+          URL.revokeObjectURL(audioUrl);
+        })
+        .catch(error => {
+          console.log(error);
+        });
       });
     })
     .catch((error) => {

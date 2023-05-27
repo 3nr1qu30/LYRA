@@ -28,7 +28,7 @@ recognition.addEventListener('result', e => { //Esta es la funcion de para trans
         recognition.stop(); //Si se cumplen los 3 segundos va a parar
         isRecording = false; //Se declara lo de q ya dejamos de hablar, incluso podriamos simplemente invocarlo pero asi dejalo 😹
         finalTranscription = transcriptions.join(' '); //Ahora si, de todas las transcripciones, se va a hacer una sola transcripcion y esa es la que va a quedar como final por asi decirlo esto lit ya es el prompt
-    }, 9000); //Aqui le ponemos los segundos de tolerancia despues de hablar
+    }, 6000); //Aqui le ponemos los segundos de tolerancia despues de hablar
 });
 
 recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine el reconocimiento pues se ejcute lo siguiente

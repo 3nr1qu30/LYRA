@@ -45,11 +45,12 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
             },
             body: JSON.stringify(data) //Y finalmente ponemos lo del promt a tipo cadena en un json para mandarlo a  pitón
         })
-        .then(response => {
-            console.log('Transcription data sent to Python'); //Y pues el mensaje de q si todo salio bien pues ya q se muestra eso
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Aquí puedes acceder a los datos devueltos por el servidor
         })
         .catch(error => {
-            console.error('Error sending transcription data to Python:', error); //Si no pues igual lo muestra
+            console.error('Error sending transcription data to Python:', error);
         });
     }
 });

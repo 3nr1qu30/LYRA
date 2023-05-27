@@ -38,7 +38,7 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
         console.log(`${finalTranscription}`); //Esto es para q veas q cuando uno deja de hablar la variable ya tiene el "prompt"
         //Para el envio a python aqui si ya creo q es lo q te toca o vas a hacer o no se 😹😹 pero basicamente
         const data = { transcription: finalTranscription }; //Aqui pongo como "data" el objeto que vamos a mnadar y trae el "prompt"
-        fetch('http://localhost:5500/', { //Especificamos a q ruta lo mandamos, yo lo deje asi porque anadaba viendo pero creo q no pude hacer todo en el mismo server xd
+        fetch('https://fastapi-production-0f32.up.railway.app/', { //Especificamos a q ruta lo mandamos, yo lo deje asi porque anadaba viendo pero creo q no pude hacer todo en el mismo server xd
             method: 'POST', //El metodo
             headers: {
                 'Content-Type': 'application/json' //Esto pues creo q ya lo ocupa el pitón

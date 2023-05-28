@@ -7,6 +7,17 @@ function UsuarioRegistradoAnteriormente(e){
         text: "El usuario ya está registrado.",
     })
   };
+
+  
+//Marco
+function UsuarioRegistradoAnteriormenteSop(e){
+  swal({
+      icon:'error',
+      title: '¡Error!',
+      text: "El usuario ya está registrado.",
+  })
+};
+  
   
   //Marco
   function UsuarioOConInco(e){
@@ -94,6 +105,16 @@ function UsuarioRegistradoAnteriormente(e){
       window.location.href='/InicioSesion';
     });
   };
+
+    //Marco
+    function UsuarioRegistradoSop(e){
+      swal({
+          icon:'success',
+          title: '¡Éxito!',
+          text: "El usuario ha sido registrado exitosamente.",
+      });
+    };
+    
   
   //Gonzalo
   function DatosActulizados(e){

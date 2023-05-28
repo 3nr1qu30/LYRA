@@ -1,0 +1,273 @@
+<%if(typeof Usuario !== 'undefined'){%>
+    <%if(typeof TipoUsu !== 'undefined' && TipoUsu === 3){%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link
+    rel="shortcut icon"
+    href="https://i.ibb.co/gFdWfc6/Whats-App-Image-2023-04-27-at-8-43-16-AM-1-modified.png"
+    type="image/svg"
+    />
+    <link rel="stylesheet" href="/css/RegistroDoctoresLy.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/PPP.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.png" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">Lyra</span>
+                    <span class="profession">Soporte</span>
+                </div>
+            </div>
+            <i class='bx bx-menu toggle iconblack'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <a href="/Soporte/GerenteSoporte">
+                        <i class='bx bx-home-alt icon' ></i>
+                        <span class="text nav-text">Lyra</span>
+                    </a>
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/Soporte/Asistente">
+                            <i class='bx bx-pen icon' ></i>
+                            <span class="text nav-text">
+                                Asistente <br> <h6>Soporte</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/EditorFAQ">
+                            <i class='bx bx-message-dots icon' ></i>
+                            <span class="text nav-text">
+                                Editor <br> <h6>FAQ</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/GerenteMantenimiento">
+                            <i class='bx bx-brush icon'></i>
+                            <span class="text nav-text mini">
+                                Gerente <br> <h6>Mantenimiento</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/IngenieroSoporte">
+                            <i class='bx bx-adjust icon' ></i>
+                            <span class="text nav-text mini">
+                                Ingeniero <br> <h6>Soporte</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/IngenieroMantenimiento">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text mini">
+                                Ingeniero <br> <h6>Mantenimiento</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/GerenteSoporte">
+                            <i class='bx bx-diamond icon' ></i>
+                            <span class="text nav-text mini">
+                                Gerente <br> <h6>Soporte</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/AgregarEmpleados">
+                            <i class='bx bx-plus-circle icon' ></i>
+                            <span class="text nav-text mini">
+                                Agregar <br> <h6>Usuarios</h6>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="/Soporte/EditarPerfil">
+                            <i class='bx bx-pencil icon' ></i>
+                            <span class="text nav-text mini">
+                                Editar <br> <h6>Datos personales</h6>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Cerrar sesión</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Barra oscura</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+<div class="containerP" style="margin: 0 auto;padding: 0px; padding-left: 80px;">
+    <div class="login-container" style="padding-top: 60px; margin-top: 0px; padding-bottom: 60px;">
+     
+
+        <div class="login-box">
+
+            <div class="row">
+                <div class="column col1">
+            <h2 class="TextInfo">Regístra a un miembro de soporte.</h2>
+            <h5 class="miniInfo">Crea una cuenta ahora mismo</h5>
+            <form method="post" action="/Soporte/GerenteSoporte/RegistroSoportePost" id="formularioRegistroPsicologo">
+                <div class="input-container magTop" style="margin-bottom: 3px; border-color: none; box-shadow: none;"> 
+                    <h4 class="infoLabel">Puesto de soporte</h4>
+                        <select name="Puesto" class="inputTypes2 selectB" style="border: solid 2px rgba(52, 101, 145, 0.699); background-color: rgba(52, 102, 145, 0.164); color: rgb(0, 0, 0)">
+                            <option value="7">Asistente</option>
+                            <option value="8">Editor de FAQ's</option>
+                            <option value="4">Gerente de mantenimiento</option>
+                            <option value="5">Ingeniero de soporte</option>
+                            <option value="6">Ingeniero de mantenimiento</option>
+                            <option value="3">Gerente de soporte</option>
+                        </select>
+                </div>
+                <div class="input-container magTop" id="grupo_nombre">
+                    <h4 class="infoLabel">Nombre</h4>
+                    <input type="text" name="Nombre" placeholder="Nombre" class="inputTypes">
+                    <p class="form_input_error"><br>El o los nombres deben contener minimo dos letras</p>
+                </div>
+                <div class="input-container magTop magboTom" id="grupo_apellidos">
+                    <h4 class="infoLabel">Apellidos</h4>
+                    <input type="text" name="Apellidos" placeholder="Apellidos" class="inputTypes">
+                    <p class="form_input_error"><br>Los apellidos deberán tener como mínimo dos letras</p>
+                </div>
+                <div class="conteneEdadSexo">
+                    <div class="input-container magTop mitades" id="grupo_edad">
+                        <h4 class="infoLabel">Edad</h4>
+                        <input type="number" name="Edad" placeholder="0 - 100" class="inputTypes">
+                        <p class="form_input_error"><br>Introduzca una edad válida</p>
+                    </div>
+                    <div class="input-container magTop mitades marginLeft" id="grupo_genero">
+                        <h4 class="infoLabel">Sexo</h4>
+                        <select class="inputTypes2 selectB" name="Sexo">
+                            <option value="">Selecciona</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                        <p class="form_input_error"><br>Seleccione su sexo</p>
+                    </div>
+                </div>
+                <div class="input-container magTop" id="grupo_nomUsuario">
+                    <h4 class="infoLabel">Nombre de usuario</h4>
+                    <input type="text" name="Usuario" placeholder="Escribe tu usuario personalizado..." class="inputTypes">
+                    <p class="form_input_error"><br>El nombre de usuario deberá contener minimo de 4 a 40 caracteres como máximo y solo puede usar el caracter especial "_"</p>
+                </div>
+                <div class="input-container magTop" id="grupo_email">
+                    <h4 class="infoLabel">Correo electrónico</h4>
+                    <input type="email" name="Correo" placeholder="Ejemplo@mail.com" class="inputTypes">
+                    <p class="form_input_error"><br>Introduzca un correo válido</p>
+                </div>
+                
+                <div class="input-container magTop" id="grupo_password">
+                    <h4 class="infoLabel">Contraseña</h4>
+                    <input type="password" name="Pass" placeholder="Escribe tu contraseña" class="inputTypes">
+                    <p class="form_input_error"><br>La contraseña debe cumplir con 1 mayúscula, 1 número, 1 caracter especial, 8 carácteres totales</p>
+                </div>    
+                <button type="submit" class="SubmitBtn gris">Registra </button>
+            </form>  
+                <h3 class="DescriptionInfoBottom">Solo tienen acceso los <a href="" class="Redirect">Gerentes de soporte</a> </h3>
+                 
+                </div>
+                <div class="column col2 avatar" style="height: 689px;">
+                    <div class="coles avatar2">
+                        <div class="Circlelogo"></div>
+                        <div class="LogoName">Lyra</div>
+                        <div class="LogoName2">Regístra una cuenta empleados de soporte</div>
+                        <div class="cuadrodatos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam aliquam obcaecati suscipit expedita voluptatibus iure vitae quo necessitatibus, earum fugiat!</div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</div>
+<script src="/js/sidebar.js"></script>
+<script src="/js/RegistroSoporte.js"></script>
+
+
+<% if (typeof alerta !== 'undefined') { %>
+    <script src="/js/Alertas.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <%if(alerta === 'Usuario ya registrado'){%>
+        <script>
+            UsuarioRegistradoAnteriormenteSop();
+        </script>
+    <%}else if(alerta === 'Usuario registrado'){%>
+        <script>
+            UsuarioRegistradoSop();
+        </script>
+    <%}else if(alerta ==='Error Servidor'){%>
+        <script>
+            ErrorServidor();
+        </script>
+    <%}%>
+<%}%>
+</body>
+</html>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error - No tienes permisos</title>
+</head>
+<body>
+  <script src="/js/Alertas.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    NoPermisos()
+  </script>
+</body>
+</html>
+<%}%>
+<%}else{%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Error - Debes Iniciar Sesión</title>
+</head>
+<body>
+<script src="/js/Alertas.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+SesionCaducada()
+</script>
+</body>
+</html>
+<%}%>

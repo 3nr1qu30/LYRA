@@ -34,7 +34,7 @@ db.BuscarReportesAbiertos = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_eporte_Estatus
     WHERE r.id_Repore_Estatus = 1`, (error, result) => {
       if (error) {
         console.error(error);
@@ -51,7 +51,7 @@ db.BuscarReportesMantenimientoPersonal = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 3 and r.id_usuario_asignado='${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
@@ -68,7 +68,7 @@ db.BuscarReportesFinalizadoMantenimientoPersonal = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 5 and r.id_usuario_asignado='${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
@@ -84,7 +84,7 @@ db.BuscarReportesFinalizadoMantenimiento = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 5`, (error, result) => {
       if (error) {
         console.error(error);
@@ -100,7 +100,7 @@ db.BuscarReportesMantenimiento = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 3`, (error, result) => {
       if (error) {
         console.error(error);
@@ -116,7 +116,7 @@ db.BuscarReporteMantenimientoFinalizado = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 6`, (error, result) => {
       if (error) {
         console.error(error);
@@ -133,7 +133,7 @@ db.BuscarReportesEnviadosGerenteMantenimientoPersonal = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 4 or id_Repore_Estatus=6 and id_usuario_manipulo_Reporte='${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
@@ -150,7 +150,7 @@ db.BuscarReportesEnProgramacionPersonal = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 4 and id_usuario_asignado='${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
@@ -167,7 +167,7 @@ db.BuscarReportesEnProcesoPersonal = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 2 and id_usuario_asignado='${Usuario}'`, (error, result) => {
       if (error) {
         console.error(error);
@@ -184,7 +184,7 @@ db.BuscarReportesEnProceso = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 2`, (error, result) => {
       if (error) {
         console.error(error);
@@ -201,7 +201,7 @@ db.BuscarReportesEnProgramacion = (Usuario)=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 4`, (error, result) => {
       if (error) {
         console.error(error);
@@ -218,7 +218,7 @@ db.BuscarReportesEnviadosGerenteMantenimiento = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 4 or id_Repore_Estatus=6`, (error, result) => {
       if (error) {
         console.error(error);
@@ -235,7 +235,7 @@ db.BuscarReportesCerrado = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_Estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON r.id_Repore_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Repore_Estatus = 8`, (error, result) => {
       if (error) {
         console.error(error);
@@ -474,7 +474,7 @@ db.BuscarResumenes=(Paciente)=>{
 //Enrique
 db.Reportes=()=>{
   return new Promise(async(resolve, reject) =>{
-    const query = `SELECT r.*, e.descripcion_estatus FROM reporte r JOIN reporte_Estatus e ON r.id_Repore_Estatus = e.id_Reporte_Estatus;`;
+    const query = `SELECT r.*, e.descripcion_estatus FROM reporte r JOIN reporte_estatus e ON r.id_Repore_Estatus = e.id_Reporte_Estatus;`;
     con.query(query,(error,result)=>{
       if (error) {
         console.error(error);

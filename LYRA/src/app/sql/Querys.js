@@ -34,7 +34,7 @@ db.BuscarReportesAbiertos = ()=>{
   return new Promise((resolve, reject) => {
     con.query(`SELECT r.*, re.descripcion_estatus
     FROM reporte AS r
-    JOIN reporte_estatus AS re ON r.id_Reporte_Estatus = re.id_Reporte_Estatus
+    JOIN reporte_estatus AS re ON re.id_Reporte_Estatus = re.id_Reporte_Estatus
     WHERE r.id_Reporte_Estatus = 1`, (error, result) => {
       if (error) {
         console.error(error);

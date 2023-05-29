@@ -2,7 +2,7 @@ const form1 = document.getElementById("form1");
 const inputs = document.querySelectorAll("#form1     input");
 
 const expReg = {
-    descripcion: /^[a-zA-Z0-9ñÑ()\/.,]{5,1000}$/
+    descripcion: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ()/.,\s"']{5,1000}$/
 }
 
 const campos = {

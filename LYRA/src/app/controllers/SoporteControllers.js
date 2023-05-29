@@ -132,6 +132,38 @@ Controllers.PaginaPrincipalGerenteSoporte= async (req,res,next)=>{
   }
 };
 
+//Agregar empleados desde el Gerente de Soporte
+Controllers.AgregarEmpleados= async (req,res,next)=>{
+  const Usuario = req.session.usuario;
+  const TipoUsu = req.session.tipo_usuario;
+  const alerta = req.query.alerta;
+  try{
+    const datosUsuario =await querys.buscarUsuario(Usuario);
+    res.render('RegistroSoporte',{Usuario,TipoUsu,datosUsuario,alerta});
+  }catch(error){
+    console.log(error);
+  }
+};
+
+Controllers.RegistroSoportePost = async (req, res, next) => {
+  const { Nombre, Apellidos, Edad, Sexo, Usuario, Correo, Pass, Puesto } = req.body;
+
+  try {
+    const usuarioExistente = await querys.buscarUsuario(Usuario);
+    
+    if (usuarioExistente.length > 0) {
+      return res.redirect('/Soporte/AgregarEmpleados?alerta=Usuario ya registrado');
+    }
+
+    await querys.RegistrarUsuarios(Nombre, Apellidos, Edad, Sexo, Correo, Usuario, Pass, Puesto);
+    return res.redirect('/Soporte/AgregarEmpleados?alerta=Usuario registrado');
+  } catch (error) {
+    console.error(error);
+    return res.redirect('/Soporte/AgregarEmpleados?alerta=Error Servidor');
+  }
+}
+
+
 //Actualizar reportes GerenteSoporte
 Controllers.ActualizarReportesGerenteSoporte = async(req,res,next)=>{
   const Usuario = req.session.usuario;

@@ -261,68 +261,197 @@
                 </table>
             </div>
             <%}%>
+            <%}else{%>
+                <%if(typeof ReportesEnProceso !== 'undefined' && ReportesEnProceso.length>0){%>
+                    <div class="contenedorreporte" id="seccion1">
+                        <h4 class="titulo">
+                            <i class='bx bx-wink-tongue mov bro'></i>Reportes enviados por el gerente de soporte
+                        </h4>
+                        <table>
+                            <thead class="titulosIndiv">
+                                <tr>
+                                    <th class="colm">Folio</th>
+                                    <th>Usuario <h6>solicitante</h6></th>
+                                    <th>Usuario <h6>manipulante</h6> </th>
+                                    <th>Estatus <h6>en proceso</h6></th>
+                                    <th class="colg">Descripción</th>
+                                    <th class="colg">Solución</th>
+                                    <th>Fecha <h6>de envío</h6></th>
+                                    <th>Acciones <h6>Editar</h6></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(let i = 0; i<ReportesEnProceso.length;i++){%>
+                                <form action="/Soporte/IngenieroMantenimiento/ActualizarReportesIngenieroSoporte" method="post">
+                                    <tr>
+                                        <td data-label="Folio">
+                                            <b><%=ReportesEnProceso[i].id_reporte%></b>
+                                            <input type="hidden" name="Id_reporte" value="<%=ReportesEnProceso[i].id_reporte%>" placeholder="folio reporte">
+                                        </td>
+                                        <td data-label="Usuario">
+                                            <%=ReportesEnProceso[i].id_usuario_solicita%>
+                                        </td>
+                                        <td data-label="Gerente">
+                                            <%=ReportesEnProceso[i].id_usuario_manipulo_Reporte%>
+                                        </td>
+                                        <td data-label="Estatus">
+                                            <select class="estatus estatusForm" name="Estatus" id="">
+                                                <option value="1"><%=ReportesEnProceso[i].descripcion_estatus%></option>
+                                                <option value="7">Solucionado</option>
+                                            </select>
+                                        </td>
+                                        <td data-label="Descripción">
+                                            <div class="descrip"><%=ReportesEnProceso[i].descripcion_reporte%></div>
+                                        </td>
+                                        <td data-label="Solución">
+                                            <%if(ReportesEnProceso[i].solucion_reporte===""){%>
+                                            <textarea class="descrip estatusForm edittex agrandable" name="Solucion"><%=ReportesEnProceso[i].solucion_reporte%></textarea>
+                                            <%}else{%>
+                                                <textarea readonly class="descrip estatusForm edittex agrandable" name="Solucion"><%=ReportesEnProceso[i].solucion_reporte%></textarea>
+                                            <%}%>
+                                        </td>
+                                        <td data-label="Fecha">
+                                            <div class="descrip"><%=formatearFechaHora(ReportesEnProceso[i].fecha_hora)%></div>
+                                        </td>
+                                        <td data-label="Editar" class="center">
+                                            <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
+                                        </td>
+                                    </tr>
+                                </form>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+                    <%}%>
             <%}%>
-            <div class="contenedorreporte" id="seccion2">
-                <h4 class="titulo">
-                    <i class='bx bx-circle mov bro'></i>Reportes solucionados
-                </h4>
-                <table>
-                    <thead class="titulosIndiv">
-                        <tr>
-                            <th class="colm">Folio</th>
-                            <th>Usuario <h6>solicitante</h6></th>
-                            <th>Usuario <h6>manipulante</h6> </th>
-                            <th>Usuario <h6>asignado</h6></th>
-                            <th>Estatus <h6>Solucionado</h6></th>
-                            <th class="colg">Descripción</th>
-                            <th class="colg">Solución</th>
-                            <th>Fecha <h6>de envío</h6></th>
-                            <th>Acciones <h6>Editar</h6></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <form action="" method="post">
-                            <tr>
-                                <td data-label="Folio">
-                                    <b>1</b>
-                                    <input type="hidden" value="" placeholder="folio reporte">
-                                </td>
-                                <td data-label="Usuario">
-                                    Usuario
-                                </td>
-                                <td data-label="Gerente">
-                                    Persona
-                                </td>
-                                <td data-label="Asignar a">
-                                    <select class="estatus estatusForm" name="" id="">
-                                        <option value="">Selecciona</option>
-                                        <option value="">id y nombre de usuario</option>
-                                    </select>
-                                </td>
-                                <td data-label="Estatus">
-                                    <select class="estatus estatusForm" name="" id="">
-                                        <option value="">Selecciona</option>
-                                        <option value="">Cerrado</option>
-                                    </select>
-                                </td>
-                                <td data-label="Descripción">
-                                    <div class="descrip">ayuda dios por favor</div>
-                                </td>
-                                <td data-label="Solución">
-                                    <div class="descrip">ayuda dios por favor</div>
-                                </td>
-                                <td data-label="Fecha">
-                                    <div class="descrip"> dd/mm/aaaa</div>
-                                </td>
-                                <td data-label="Editar" class="center">
-                                    <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
-                                </td>
-                            </tr>
-                        </form>
-                    </tbody>
-                </table>
-            </div>
             
+            <%if(TipoUsu === 5){%>
+                <%if(typeof BuscarReportesSolucionadoPersonal !== 'undefined' && BuscarReportesSolucionadoPersonal.length>0){%>
+                    <div class="contenedorreporte" id="seccion1">
+                        <h4 class="titulo">
+                            <i class='bx bx-wink-tongue mov bro'></i>Reportes enviados por el gerente de soporte
+                        </h4>
+                        <table>
+                            <thead class="titulosIndiv">
+                                <tr>
+                                    <th class="colm">Folio</th>
+                                    <th>Usuario <h6>solicitante</h6></th>
+                                    <th>Usuario <h6>manipulante</h6> </th>
+                                    <th>Estatus <h6>en proceso</h6></th>
+                                    <th class="colg">Descripción</th>
+                                    <th class="colg">Solución</th>
+                                    <th>Fecha <h6>de envío</h6></th>
+                                    <th>Acciones <h6>Editar</h6></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(let i = 0; i<BuscarReportesSolucionadoPersonal.length;i++){%>
+                                <form action="/Soporte/IngenieroMantenimiento/ActualizarReportesIngenieroSoporte" method="post">
+                                    <tr>
+                                        <td data-label="Folio">
+                                            <b><%=BuscarReportesSolucionadoPersonal[i].id_reporte%></b>
+                                            <input type="hidden" name="Id_reporte" value="<%=BuscarReportesSolucionadoPersonal[i].id_reporte%>" placeholder="folio reporte">
+                                        </td>
+                                        <td data-label="Usuario">
+                                            <%=BuscarReportesSolucionadoPersonal[i].id_usuario_solicita%>
+                                        </td>
+                                        <td data-label="Gerente">
+                                            <%=BuscarReportesSolucionadoPersonal[i].id_usuario_manipulo_Reporte%>
+                                        </td>
+                                        <td data-label="Estatus">
+                                            <select class="estatus estatusForm" name="Estatus" id="">
+                                                <option value="1"><%=BuscarReportesSolucionadoPersonal[i].descripcion_estatus%></option>
+                                                <option value="8">Cerrar</option>
+                                            </select>
+                                        </td>
+                                        <td data-label="Descripción">
+                                            <div class="descrip"><%=BuscarReportesSolucionadoPersonal[i].descripcion_reporte%></div>
+                                        </td>
+                                        <td data-label="Solución">
+                                            <%if(BuscarReportesSolucionadoPersonal[i].solucion_reporte===""){%>
+                                            <textarea class="descrip estatusForm edittex agrandable" name="Solucion" readonly><%=BuscarReportesSolucionadoPersonal[i].solucion_reporte%></textarea>
+                                            <%}else{%>
+                                                <textarea readonly class="descrip estatusForm edittex agrandable" name="Solucion"><%=BuscarReportesSolucionadoPersonal[i].solucion_reporte%></textarea>
+                                            <%}%>
+                                        </td>
+                                        <td data-label="Fecha">
+                                            <div class="descrip"><%=formatearFechaHora(BuscarReportesSolucionadoPersonal[i].fecha_hora)%></div>
+                                        </td>
+                                        <td data-label="Editar" class="center">
+                                            <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
+                                        </td>
+                                    </tr>
+                                </form>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+            <%}%>
+            <%} else if(TipoUsu === 3){ %>
+                <%if(typeof BuscarReportesSolucionados !== 'undefined' && BuscarReportesSolucionados.length>0){%>
+                    <div class="contenedorreporte" id="seccion1">
+                        <h4 class="titulo">
+                            <i class='bx bx-wink-tongue mov bro'></i>Reportes enviados por el gerente de soporte
+                        </h4>
+                        <table>
+                            <thead class="titulosIndiv">
+                                <tr>
+                                    <th class="colm">Folio</th>
+                                    <th>Usuario <h6>solicitante</h6></th>
+                                    <th>Usuario <h6>manipulante</h6> </th>
+                                    <th>Estatus <h6>en proceso</h6></th>
+                                    <th class="colg">Descripción</th>
+                                    <th class="colg">Solución</th>
+                                    <th>Fecha <h6>de envío</h6></th>
+                                    <th>Acciones <h6>Editar</h6></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for(let i = 0; i<BuscarReportesSolucionados.length;i++){%>
+                                <form action="/Soporte/IngenieroMantenimiento/ActualizarReportesIngenieroSoporte" method="post">
+                                    <tr>
+                                        <td data-label="Folio">
+                                            <b><%=BuscarReportesSolucionados[i].id_reporte%></b>
+                                            <input type="hidden" name="Id_reporte" value="<%=BuscarReportesSolucionados[i].id_reporte%>" placeholder="folio reporte">
+                                        </td>
+                                        <td data-label="Usuario">
+                                            <%=BuscarReportesSolucionados[i].id_usuario_solicita%>
+                                        </td>
+                                        <td data-label="Gerente">
+                                            <%=BuscarReportesSolucionados[i].id_usuario_manipulo_Reporte%>
+                                        </td>
+                                        <td data-label="Estatus">
+                                            <select class="estatus estatusForm" name="Estatus" id="">
+                                                <option value="1"><%=BuscarReportesSolucionados[i].descripcion_estatus%></option>
+                                                <option value="8">Cerrar</option>
+                                            </select>
+                                        </td>
+                                        <td data-label="Descripción">
+                                            <div class="descrip"><%=BuscarReportesSolucionados[i].descripcion_reporte%></div>
+                                        </td>
+                                        <td data-label="Solución">
+                                            <%if(BuscarReportesSolucionados[i].solucion_reporte===""){%>
+                                            <textarea class="descrip estatusForm edittex agrandable" name="Solucion" readonly><%=BuscarReportesSolucionados[i].solucion_reporte%></textarea>
+                                            <%}else{%>
+                                                <textarea readonly class="descrip estatusForm edittex agrandable" name="Solucion"><%=BuscarReportesSolucionados[i].solucion_reporte%></textarea>
+                                            <%}%>
+                                        </td>
+                                        <td data-label="Fecha">
+                                            <div class="descrip"><%=formatearFechaHora(BuscarReportesSolucionados[i].fecha_hora)%></div>
+                                        </td>
+                                        <td data-label="Editar" class="center">
+                                            <button type="submit" class="accion"><i class='bx bx-bolt-circle mov'></i></button>
+                                        </td>
+                                    </tr>
+                                </form>
+                                <%}%>
+                            </tbody>
+                        </table>
+                    </div>
+            <%}%>
+            <%}%>
+
+
         </div>
         <script src="/js/sidebar.js"></script>
         <script src="/js/PPP.js"></script>

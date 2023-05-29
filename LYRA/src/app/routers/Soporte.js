@@ -28,9 +28,11 @@ router.post('/EditorFAQ/EditarFAQ',SoporteControllers.EditarFAQ);
 //Gerente de Soporte
 //Get
 router.get('/GerenteSoporte',SoporteControllers.PaginaPrincipalGerenteSoporte);
+router.get('/AgregarEmpleados',SoporteControllers.AgregarEmpleados);
 //Post
 router.post('/GerenteSoporte/ActualizarReportesGerenteSoporte',SoporteControllers.ActualizarReportesGerenteSoporte);
 router.post('/GerenteSoporte/ActualizarReportesGerenteMantenimiento',SoporteControllers.ActualizarReportesGerenteMantenimiento);
+router.post('/GerenteSoporte/RegistroSoportePost',SoporteControllers.RegistroSoportePost);
 //Gerentete Mantenimiento
 router.get('/GerenteMantenimiento',SoporteControllers.PaginaPrincipalGerenteMantenimiento);
 //Ingeniero Mantenimiento

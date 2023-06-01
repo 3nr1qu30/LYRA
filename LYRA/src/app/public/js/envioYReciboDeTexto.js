@@ -47,7 +47,10 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data); // Aquí puedes acceder a los datos devueltos por el servidor
+            const mensaje = data.mensaje;
+            const respuesta = data.respuesta;
+            console.log('Mensaje:', mensaje);
+            console.log('Respuesta:', respuesta); // Aquí puedes acceder a los datos devueltos por el servidor
         })
         .catch(error => {
             console.error('Error sending transcription data to Python:', error);

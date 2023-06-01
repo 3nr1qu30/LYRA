@@ -12,6 +12,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/chatLyra.css">
     </head>
+    <%if(Enlace!=='undefined'&& Enlace.length!==0){%>
+      <script>
+        const Enlace = '<%=Enlace[0].id_Psicologo_Paciente%>';
+    </script>
+      </script>
+    <%}%>
+    <script>
+    </script>
     <body>
         <a href="/Paciente/EditarPerfil" class="floating-button">
             <i class="fa fa-pencil icotamano"></i>

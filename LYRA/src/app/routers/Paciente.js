@@ -15,4 +15,5 @@ router.post('/EditarPerfil', PacienteControllers.EditarDatosPacientePost);
 
 //Gonzalo
 router.post('/EditarPass', PacienteControllers.EditarPass);
+router.post('/AgregarReporte', PacienteControllers.RegistrarResumen);
 module.exports= router;

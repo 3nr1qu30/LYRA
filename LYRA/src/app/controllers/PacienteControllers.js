@@ -2,10 +2,16 @@ const querys = require('../sql/Querys');
 const Controllers={};
 
 //Todes
-Controllers.Principal = (req,res,next)=>{
+Controllers.Principal =async (req,res,next)=>{
     const Usuario = req.session.usuario;
     const TipoUsu = req.session.tipo_usuario;
-    res.render('PaginaPrincipalPacientes',{Usuario,TipoUsu});
+    let Enlace='undefined';
+    try{
+      Enlace =await querys.BuscarEnlaces(Usuario);
+      res.render('PaginaPrincipalPacientes',{Usuario,TipoUsu,Enlace});
+    }catch{
+      res.render('PaginaPrincipalPacientes',{Usuario,TipoUsu,Enlace});
+    }
   };
 
 //Gonzalo
@@ -50,6 +56,15 @@ Controllers.EditarPass = async(req,res,next) =>{
   }catch(error){
     console.error(error);
     return res.redirect('/Paciente/EditarPerfil?alerta=Error Pass');
+  }
+};
+
+Controllers.RegistrarResumen = async(req,res,next)=>{
+  const{Resumen,Enlace} = req.body;
+  try{
+    querys.AgregarResumen(Enlace,Resumen);
+  }catch(error){
+    console.error(error);
   }
 };
 

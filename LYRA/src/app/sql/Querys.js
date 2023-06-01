@@ -625,5 +625,20 @@ db.EliminarFAQ =(id_FAQs,Usuario)=>{
   })
 }
 
+db.AgregarResumen=(Enlace,Resumen)=>{
+  return new Promise(async(resolve,reject)=>{
+    const fechaActual = moment().tz('America/Mexico_City').format('YYYY-MM-DD HH:mm:ss');
+    const query = `INSERT INTO resumen_conversacion VALUES(default,${Enlace},'${Resumen}','${fechaActual}')`
+    con.query(query,(error,result)=>{
+      if (error) {
+        console.error(error);
+        reject(error);
+      } else {
+        resolve(result);
+      }
+    });
+  })
+}
+
 module.exports = db;
 

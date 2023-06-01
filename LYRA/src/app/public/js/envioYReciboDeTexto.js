@@ -49,8 +49,20 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
         .then(data => {
             const mensaje = data.mensaje;
             const respuesta = data.respuesta;
-            console.log('Mensaje:', mensaje);
-            console.log('Respuesta:', respuesta); // Aquí puedes acceder a los datos devueltos por el servidor
+            const datos = {Enlace:Enlace,Resumen:mensaje}
+            console.log(mensaje);
+            console.log(respuesta);
+            fetch('https://lyra-production.up.railway.app/Paciente/AgregarReporte', { //Especificamos a q ruta lo mandamos, yo lo deje asi porque anadaba viendo pero creo q no pude hacer todo en el mismo server xd
+            method: 'POST', //El metodo
+            headers: {
+                'Content-Type': 'application/json' //Esto pues creo q ya lo ocupa el pitón
+            },
+            body: JSON.stringify(datos) //Y finalmente ponemos lo del promt a tipo cadena en un json para mandarlo a  pitón
+        })
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error sending transcription data to Python:', error);
+        });
         })
         .catch(error => {
             console.error('Error sending transcription data to Python:', error);

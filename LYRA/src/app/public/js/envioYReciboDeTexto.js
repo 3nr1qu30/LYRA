@@ -53,6 +53,7 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
             console.log(mensaje);
             console.log(respuesta);
             const utterance = new SpeechSynthesisUtterance(respuesta) //Mas metodos de gugul para que te hable todo lo q le dijiste bueno aqui lo llamas y le pones un parametro (el que dije)
+            utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === 'es-ES' && voice.name === 'Google español de España');
             speechSynthesis.speak(utterance)
             fetch('https://lyra-production.up.railway.app/Paciente/AgregarReporte', { //Especificamos a q ruta lo mandamos, yo lo deje asi porque anadaba viendo pero creo q no pude hacer todo en el mismo server xd
             method: 'POST', //El metodo
@@ -91,7 +92,7 @@ btnComenzarGrabacion.addEventListener("click", function(){ //Por ultimo aqui pue
 //mientras no lo descomentes pero en resumen hace esto
 
 //--->
-const playbutton = document.getElementById('playbutton')  //Aqui jalaba al boton para reproducir la voz
+/* const playbutton = document.getElementById('playbutton')  //Aqui jalaba al boton para reproducir la voz
 
 playbutton.addEventListener("click",() => { //Cuando le dabas click a ese botón
     playText(finalTranscription); //Lit te decia todo (con voz) esto es para cuando traigamos el objeto de python y pues ya lo pongamos a que en lugar de presionar el botón se conteste automaticamente despues de unos dos segundos estimo
@@ -101,6 +102,6 @@ playbutton.addEventListener("click",() => { //Cuando le dabas click a ese botón
 function playText(text) { //El parametro es lo que trae de la respuesta de lyra
     const utterance = new SpeechSynthesisUtterance(text) //Mas metodos de gugul para que te hable todo lo q le dijiste bueno aqui lo llamas y le pones un parametro (el que dije)
     speechSynthesis.speak(utterance) //Otro metodo con el cual habla el texto y fin
-} //<---
+} */ //<---
 
 //Comenta todo eso que esta señalado en las flechas porque creo q nos va a servir mañana

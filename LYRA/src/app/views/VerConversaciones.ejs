@@ -44,7 +44,7 @@
               <%for(let i=0;i<Resumenes.length;i++){%>
                 <div class="paciente-container">
                     <div class="paciente gricesillo">
-                    <h3 class="nombre">#<%=Resumenes[i].id_Resumen%> <%=formatearFechaHora(Resumenes[i].fecha)%></h3>
+                    <h3 class="nombre">#<%i+1%> <%=formatearFechaHora(Resumenes[i].fecha)%></h3>
                     <h4 class="usuario conversacion"><%=Resumenes[i].resumen%></h4>
                     </div>
                   </div>

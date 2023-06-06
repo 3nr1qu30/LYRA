@@ -52,9 +52,7 @@ recognition.addEventListener('end', () => { //Aqui declaramos que cuando termine
             const datos = {Enlace:Enlace,Resumen:mensaje}
             console.log(mensaje);
             console.log(respuesta);
-            const utterance = new SpeechSynthesisUtterance(respuesta) //Mas metodos de gugul para que te hable todo lo q le dijiste bueno aqui lo llamas y le pones un parametro (el que dije)
-            utterance.voice = speechSynthesis.getVoices().find(voice => voice.lang === 'es-ES' && voice.name === 'Google español de España');
-            speechSynthesis.speak(utterance)
+            responsiveVoice.speak(respuesta, "Spanish Latin American Female");
             fetch('https://lyra-production.up.railway.app/Paciente/AgregarReporte', { //Especificamos a q ruta lo mandamos, yo lo deje asi porque anadaba viendo pero creo q no pude hacer todo en el mismo server xd
             method: 'POST', //El metodo
             headers: {

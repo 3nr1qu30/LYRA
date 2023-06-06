@@ -67,5 +67,5 @@ Controllers.RegistrarResumen = async(req,res,next)=>{
     console.error(error);
   }
 };
-/* hola */
+/* h*/
 module.exports = Controllers;
